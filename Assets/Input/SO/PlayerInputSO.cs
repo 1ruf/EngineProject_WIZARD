@@ -11,6 +11,7 @@ namespace Players
         
         public event Action OnAttackPressed;
         public event Action OnInteractPressed;
+        public event Action OnSkillCreatePressed;
 
         public event Action<bool> OnSprintPressed;
         public event Action<bool> OnLookPressed;
@@ -122,6 +123,12 @@ namespace Players
         {
             Vector2 scroll = context.ReadValue<Vector2>();
             MouseScroll = scroll;
+        }
+
+        public void OnSkillCreate(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                OnSkillCreatePressed?.Invoke();
         }
     }
 }

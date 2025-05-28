@@ -1,5 +1,7 @@
 using Players;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Unity.Behavior.GraphFramework;
 using UnityEngine;
 
@@ -11,9 +13,13 @@ public class Player : MonoBehaviour
 
     public bool CanMove { get; set; } = true;
 
+    public Dictionary<Type, IPlayerComponent> _components;
+
     public Transform camTarget;
+    public SkillSO CurrentSkill;
     private void Awake()
     {
+        _components = new Dictionary<Type, IPlayerComponent>();
         InitComponents();
     }
 
@@ -27,4 +33,13 @@ public class Player : MonoBehaviour
             }
         }
     }
+    public virtual void InitializeComponents()
+    {
+        _components.Values.ToList().ForEach(component => component.Initialize(this));
+    }
+    public T GetCompo<T>() where T : IPlayerComponent
+           => (T)_components.GetValueOrDefault(typeof(T));
+
+    public IPlayerComponent GetCompo(Type type)
+        => _components.GetValueOrDefault(type);
 }
