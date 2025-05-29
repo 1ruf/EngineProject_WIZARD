@@ -9,29 +9,28 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class PlayerAttack : MonoBehaviour, IPlayerComponent
 {
     [SerializeField] private GameObject _targetSkillObj;
-    [SerializeField] private float attackRange = 5f;
 
-    [SerializeField] private List<Skill> skills;
+    public bool IsSkillReady {get; private set;}
 
     private Player _player;
     private PlayerInputSO _input;
 
-    private bool _isSkillReady;
     private SkillSO _skillSO;
 
-    private Skill _currentSkillAtt;
-
     private bool _isCooltime;
+    private bool _isAttackable;
 
+    public void SetSkillReady(bool value)
+    {
+        IsSkillReady = value;
+        _isAttackable = value;
+    }
     public void Initialize(Player player)
     {
         _player= player;
         _input = player.Input;
 
         AddEvents();
-
-        //테스트코드
-        _isSkillReady = true;
     }
 
     private void OnDestroy()
@@ -41,12 +40,22 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
 
     private void Update()
     {
-        if (_isSkillReady)
+        if (IsSkillReady)
         {
-            if (_targetSkillObj.activeSelf == false) _targetSkillObj.SetActive(true);
+            CheckSkill();
+
             Vector3 atkPos = _input.GetWorldPosition();
-            SetTargetSkill(atkPos, 3);
+            SetTargetSkill(atkPos, _skillSO.Range, CheckDistance(atkPos,transform.position)?Color.green:Color.red);
         }
+        else
+        {
+            if (_targetSkillObj.activeSelf == true) _targetSkillObj.SetActive(false);
+        }
+    }
+    private void CheckSkill()
+    {
+        if (_skillSO == null) _skillSO = _player.CurrentSkill;
+        if (_targetSkillObj.activeSelf == false) _targetSkillObj.SetActive(true);
     }
     private void AddEvents()
     {
@@ -57,61 +66,39 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         _input.OnAttackPressed -= HandleAttackPress;
     }
 
-    private void SetTargetSkill(Vector3 targetPos,float radius)
+    private void SetTargetSkill(Vector3 targetPos,float radius, Color color)
     {
-        _targetSkillObj.transform.localScale = new Vector3(radius, 1, radius);
-        _targetSkillObj.transform.position = targetPos;
+        _targetSkillObj.transform.localScale = new Vector3(radius, radius, 1);
+        _targetSkillObj.transform.position = targetPos + new Vector3(0,0.01f,0);
+
+        color.a = 0.5f;
+        _targetSkillObj.GetComponent<SpriteRenderer>().color = color;
+    }
+    private void SpawnEffect(Vector3 pos)
+    {
+        Instantiate(_skillSO.skillEffect, null).transform.position = pos;
+    }
+    private bool CheckDistance(Vector3 v1,Vector3 v2)
+    {
+        return Vector3.Distance(v1, v2) < (int)_skillSO.SkillRange.Range;
     }
 
     private void HandleAttackPress()
     {
         Vector3 AttackPosition = _input.GetWorldPosition();
-        if ((_isCooltime == true) && (Vector3.Distance(AttackPosition, transform.position) > (int)_skillSO.SkillRange.Range)) return;
+        if ((_isCooltime == true) && _isAttackable == false) return;
+        if (CheckDistance(AttackPosition, transform.position) == false) return;
+
+        SpawnEffect(transform.position);
+
         _isCooltime = true;
 
         _skillSO = _player.CurrentSkill;
 
         
         _player.CanMove = false;
-        print("공격");
-        _isSkillReady = false;
+        IsSkillReady = false;
         _targetSkillObj.SetActive(false);
         //대충 애니메이션
-        SkillActive(AttackPosition,_skillSO);
-    }
-    private void SkillActive(Vector3 targetPos,SkillSO skill)
-    {
-        switch (skill.SkillType.Type)
-        {
-            case SKILL_TYPE.Summon:
-                _currentSkillAtt = skills[0] as SummonSkill;
-                break;
-            case SKILL_TYPE.Throw:
-                _currentSkillAtt = skills[1] as ThrowSkill;
-                break;
-            case SKILL_TYPE.Defence:
-                _currentSkillAtt = skills[2] as DefenceSkill;
-                break;
-        }
-        ExcuteSkill(targetPos,skill);
-    }
-    private void ExcuteSkill(Vector3 targetPos, SkillSO skill)
-    {
-        _currentSkillAtt.Excute(targetPos,skill);
-        Instantiate(skill.skillEffect,null).transform.position = targetPos;
-        StartCoroutine(Reset(3f));
-    }
-    private IEnumerator Reset(float time)
-    {
-        yield return new WaitForSeconds(time);
-        _isCooltime = false;
-        _player.CanMove = true;
-
-
-
-
-
-
-        _isSkillReady = true;
     }
 }

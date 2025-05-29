@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Test
   Damage: 5
-  Range: 3
-  SkillRange: {fileID: 11400000, guid: 12726ba79a2d4bb48985160e05b9334b, type: 2}
+  Range: 1
+  SkillRange: {fileID: 11400000, guid: df59a0703f9172742acf452becb19942, type: 2}
   SkillAttribute: {fileID: 11400000, guid: bc2a450b0f3849b4fa994fe1d5ac932b, type: 2}
   SkillType: {fileID: 11400000, guid: c7c7048f26c78f44c9e6c9488755c44e, type: 2}
   skillEffect: {fileID: 2577799381811689623, guid: 86f13725b4ff9ad42a72e88c515ce948, type: 3}

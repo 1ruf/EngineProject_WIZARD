@@ -2,12 +2,11 @@ using Players;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.Behavior.GraphFramework;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [field:SerializeField] public PlayerInputSO Input { get; private set; }
+    [field: SerializeField] public PlayerInputSO Input { get; private set; }
     public int Hp { get; private set; }
     public int Mp { get; private set; }
 
@@ -20,23 +19,22 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _components = new Dictionary<Type, IPlayerComponent>();
-        InitComponents();
+        AddComponents();
+        InitializeComponents();
     }
 
-    private void InitComponents()
+
+    protected virtual void AddComponents()
     {
-        foreach (Transform compo in transform)
-        {
-            if(compo.TryGetComponent(out IPlayerComponent playerCompo))
-            {
-                playerCompo.Initialize(this);
-            }
-        }
+        GetComponentsInChildren<IPlayerComponent>().ToList()
+            .ForEach(component => _components.Add(component.GetType(), component));
     }
-    public virtual void InitializeComponents()
+
+    protected virtual void InitializeComponents()
     {
         _components.Values.ToList().ForEach(component => component.Initialize(this));
     }
+
     public T GetCompo<T>() where T : IPlayerComponent
            => (T)_components.GetValueOrDefault(typeof(T));
 

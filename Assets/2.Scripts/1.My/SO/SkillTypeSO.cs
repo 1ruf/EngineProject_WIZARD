@@ -10,5 +10,5 @@ public enum SKILL_TYPE
 {
     Summon,
     Throw,
-    Defence
+    Defense
 }

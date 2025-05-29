@@ -14,6 +14,6 @@ public class SkillRangeSO : ScriptableObject
 public enum SKILL_RANGE
 {
     CLSOE = 3,
-    MIDDLE = 10,
-    LONG = 20,
+    MIDDLE = 5,
+    LONG = 8,
 }

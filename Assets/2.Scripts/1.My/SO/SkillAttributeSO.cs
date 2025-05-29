@@ -10,5 +10,6 @@ public enum SKILL_ATTRIBUTE
 {
     ICE,
     WIND,
-    UNIVERSE
+    UNIVERSE,
+    HOLOGRAM
 }

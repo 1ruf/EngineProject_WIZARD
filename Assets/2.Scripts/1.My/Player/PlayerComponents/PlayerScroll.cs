@@ -25,13 +25,13 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
     }
     public void SetSkill(bool value)
     {
+        print("스킬 제작?:" + value);
+        _player.GetCompo<PlayerAttack>().SetSkillReady(value);
         if (value)
         {
-            Time.timeScale = slowMotioSpeed;
         }
         else
         {
-            Time.timeScale = 1f;
         }
     }
 
