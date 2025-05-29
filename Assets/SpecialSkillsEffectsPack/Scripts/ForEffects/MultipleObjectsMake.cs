@@ -12,41 +12,55 @@ public class MultipleObjectsMake : _ObjectsMakeBase
     public Vector3 m_randomScale;
     public bool isObjectAttachToParent = true;
 
-    float m_Time;
-    float m_Time2;
-    float m_delayTime;
-    float m_count;
+    float m_startTime;
+    float m_lastMakeTime;
+    int m_currentCount;
     float m_scalefactor;
-
 
     void Start()
     {
-        m_Time = m_Time2 = Time.time;
-        m_scalefactor = VariousEffectsScene.m_gaph_scenesizefactor; //transform.parent.localScale.x; 
+        m_startTime = Time.time;
+        m_lastMakeTime = m_startTime;
+        m_scalefactor = VariousEffectsScene.m_gaph_scenesizefactor;
+        m_currentCount = 0;
     }
-
 
     void Update()
     {
-        if (Time.time > m_Time + m_startDelay)
+        if (!CanStart()) return;
+        if (CanMakeNext())
         {
-            if (Time.time > m_Time2 + m_makeDelay && m_count < m_makeCount)
+            MakeObjects();
+            m_lastMakeTime = Time.time;
+            m_currentCount++;
+        }
+    }
+
+    bool CanStart()
+    {
+        return Time.time > m_startTime + m_startDelay;
+    }
+
+    bool CanMakeNext()
+    {
+        return m_currentCount < m_makeCount && Time.time > m_lastMakeTime + m_makeDelay;
+    }
+
+    void MakeObjects()
+    {
+        Vector3 basePos = transform.position + GetRandomVector(m_randomPos) * m_scalefactor;
+        Quaternion baseRot = transform.rotation * Quaternion.Euler(GetRandomVector(m_randomRot));
+
+        foreach (var prefab in m_makeObjs)
+        {
+            GameObject obj = Instantiate(prefab, basePos, baseRot);
+            Vector3 scale = prefab.transform.localScale + GetRandomVector2(m_randomScale);
+            if (isObjectAttachToParent)
+                obj.transform.parent = this.transform;
+            obj.transform.localScale = scale;
+            if (prefab.TryGetComponent(out DamageCaster caster))
             {
-                Vector3 m_pos = transform.position + GetRandomVector(m_randomPos)* m_scalefactor; 
-                Quaternion m_rot = transform.rotation * Quaternion.Euler(GetRandomVector(m_randomRot));
-                
-
-                for (int i = 0; i < m_makeObjs.Length; i++)
-                {
-                    GameObject m_obj = Instantiate(m_makeObjs[i], m_pos, m_rot);
-                    Vector3 m_scale = (m_makeObjs[i].transform.localScale + GetRandomVector2(m_randomScale));
-                    if(isObjectAttachToParent)
-                        m_obj.transform.parent = this.transform;
-                    m_obj.transform.localScale = m_scale;
-                }
-
-                m_Time2 = Time.time;
-                m_count++;
+                caster.DamageDealer(5);//테스트 지우ㅡㅓ
             }
         }
     }

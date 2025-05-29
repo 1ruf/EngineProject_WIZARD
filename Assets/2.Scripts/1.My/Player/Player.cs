@@ -41,3 +41,9 @@ public class Player : MonoBehaviour
     public IPlayerComponent GetCompo(Type type)
         => _components.GetValueOrDefault(type);
 }
+public enum AnimationState
+{
+    Idle,
+    Walk,
+    Run
+}

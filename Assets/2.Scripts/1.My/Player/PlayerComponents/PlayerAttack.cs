@@ -89,7 +89,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         if ((_isCooltime == true) && _isAttackable == false) return;
         if (CheckDistance(AttackPosition, transform.position) == false) return;
 
-        SpawnEffect(transform.position);
+        SpawnEffect(AttackPosition);
 
         _isCooltime = true;
 

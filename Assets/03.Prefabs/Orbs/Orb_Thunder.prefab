@@ -45,6 +45,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6741734988720072825, guid: 8519f328e7c40ce47a458c30cc8e07a1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6741734988720072825, guid: 8519f328e7c40ce47a458c30cc8e07a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -86,7 +90,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6741734988720072826, guid: 8519f328e7c40ce47a458c30cc8e07a1, type: 3}
       propertyPath: m_Name
-      value: Orb_Shock_Blue Variant
+      value: Orb_Thunder
       objectReference: {fileID: 0}
     - target: {fileID: 6741734988720072826, guid: 8519f328e7c40ce47a458c30cc8e07a1, type: 3}
       propertyPath: m_IsActive
