@@ -1,8 +1,11 @@
+using Core;
+using Core.Events;
 using NUnit.Framework;
 using Players;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
@@ -16,6 +19,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     private PlayerInputSO _input;
 
     private SkillSO _skillSO;
+    private EventChannelSO _skillChannel;
 
     private bool _isCooltime;
     private bool _isAttackable;
@@ -29,6 +33,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     {
         _player= player;
         _input = player.Input;
+        _skillChannel = player.SkillChannel;
 
         AddEvents();
     }
@@ -74,9 +79,15 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         color.a = 0.5f;
         _targetSkillObj.GetComponent<SpriteRenderer>().color = color;
     }
-    private void SpawnEffect(Vector3 pos)
+    private void ActiveSkill(Vector3 pos)
     {
-        Instantiate(_skillSO.skillEffect, null).transform.position = pos;
+        SpawnSkillEvent evt = SkillEvent.SetSkillEvent;
+
+        evt.Skill = _skillSO;
+        evt.StartPosition = transform.position;
+        evt.TargetPosition = pos;
+
+        _skillChannel.InvokeEvent(evt);
     }
     private bool CheckDistance(Vector3 v1,Vector3 v2)
     {
@@ -86,10 +97,10 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     private void HandleAttackPress()
     {
         Vector3 AttackPosition = _input.GetWorldPosition();
-        if ((_isCooltime == true) && _isAttackable == false) return;
-        if (CheckDistance(AttackPosition, transform.position) == false) return;
+        if (_isCooltime && !_isAttackable) return;
+        if (!CheckDistance(AttackPosition, transform.position)) return;
 
-        SpawnEffect(AttackPosition);
+        ActiveSkill(AttackPosition);
 
         _isCooltime = true;
 

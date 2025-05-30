@@ -1,3 +1,4 @@
+using Core;
 using Players;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
 
     public Transform camTarget;
     public SkillSO CurrentSkill;
+    public EventChannelSO SkillChannel;
     private void Awake()
     {
         _components = new Dictionary<Type, IPlayerComponent>();

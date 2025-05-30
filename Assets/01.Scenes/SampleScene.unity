@@ -1240,6 +1240,7 @@ MonoBehaviour:
   <Input>k__BackingField: {fileID: 11400000, guid: 008d41bd9fbc4d845bcf090802b90707, type: 2}
   camTarget: {fileID: 396525081}
   CurrentSkill: {fileID: 11400000, guid: 864e651ab0a9cd2489666e046a1a68e2, type: 2}
+  SkillChannel: {fileID: 11400000, guid: 7973438251414ef4ab9d1f5e825378e8, type: 2}
 --- !u!143 &928507501
 CharacterController:
   m_ObjectHideFlags: 0
@@ -29613,7 +29614,7 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
+  m_AnimatePhysics: 1
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
