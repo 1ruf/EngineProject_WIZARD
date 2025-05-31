@@ -12,27 +12,31 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
     private PlayerInputSO _input;
 
     private bool _isCreating;
+    private bool _skillUsing;
     public void Initialize(Player player)
     {
         _player = player;
         _input = player.Input;
 
+        _player.GetCompo<PlayerAnimatorTrigger>().OnAnimationEnd += HandleSkillUsed;
         _input.OnSkillCreatePressed += HandleCreatePressed;
     }
+
+    private void HandleSkillUsed()
+    {
+        _skillUsing = false;
+        _player.CanMove = true;
+    }
+
     private void HandleCreatePressed()
     {
-        SetSkill(_isCreating = !_isCreating);
+        SetSkill();
     }
-    public void SetSkill(bool value)
+    public void SetSkill()
     {
-        print("스킬 제작?:" + value);
-        _player.GetCompo<PlayerAttack>().SetSkillReady(value);
-        if (value)
-        {
-        }
-        else
-        {
-        }
+        //대충 만들어서 넘겨주기
+        _player.GetCompo<PlayerAttack>().SkillReady(_currentSkillSO);
+
     }
 
     public SkillSO GetSkill()

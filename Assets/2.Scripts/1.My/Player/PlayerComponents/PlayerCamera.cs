@@ -1,4 +1,7 @@
+using Care.Event;
+using Core;
 using Players;
+using System;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -7,6 +10,7 @@ public class PlayerCamera : MonoBehaviour, IPlayerComponent
 {
     [SerializeField] private CinemachineCamera _vCam;
     [SerializeField] private CinemachineBasicMultiChannelPerlin multiChannelPerlin;
+    [SerializeField] private EventChannelSO cameraChannel;
 
     [SerializeField] private Transform camTarget;
     [SerializeField] private float scrollSpeed = 0.1f;
@@ -45,18 +49,21 @@ public class PlayerCamera : MonoBehaviour, IPlayerComponent
     private void AddListeners()
     {
         _input.OnLookPressed += HandleLookPressed;
+        cameraChannel.AddListener<CameraShakeEvent>(HandleCameraShake);
     }
+
     private void RemoveListeners()
     {
         _input.OnLookPressed -= HandleLookPressed;
+        cameraChannel.RemoveListener<CameraShakeEvent>(HandleCameraShake);
     }
     #endregion
 
-    //private void FixedUpdate()
-    //{
-    //    Vector3 camPos = _plrTrm.position;
-    //    camTarget.position += new Vector3(0, camTarget.position.y + _input.MouseScroll.y * scrollSpeed, 0);
-    //}
+    private void HandleCameraShake(CameraShakeEvent callback)
+    {
+        multiChannelPerlin.AmplitudeGain = callback.Power;
+        multiChannelPerlin.FrequencyGain = callback.Speed;
+    }
     private void DecreaseShake()
     {
         float grain = multiChannelPerlin.AmplitudeGain;

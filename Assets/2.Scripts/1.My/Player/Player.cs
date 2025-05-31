@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public Transform camTarget;
     public SkillSO CurrentSkill;
     public EventChannelSO SkillChannel;
+    public EventChannelSO cameraChannel;
     private void Awake()
     {
         _components = new Dictionary<Type, IPlayerComponent>();
@@ -47,5 +48,6 @@ public enum AnimationState
 {
     Idle,
     Walk,
-    Run
+    Run,
+    Attack
 }

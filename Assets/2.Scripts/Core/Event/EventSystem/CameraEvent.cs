@@ -1,0 +1,16 @@
+using Core;
+using UnityEngine;
+
+namespace Care.Event
+{
+    public class CameraEvent
+    {
+        public static readonly CameraShakeEvent CameraShakeEvent = new();
+    }
+    public class CameraShakeEvent : GameEvent
+    {
+        public float Power;
+        public float Speed = 50f;
+        public float Duration = 0f;
+    }
+}

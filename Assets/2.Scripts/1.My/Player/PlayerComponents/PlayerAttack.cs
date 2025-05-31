@@ -1,3 +1,4 @@
+using Care.Event;
 using Core;
 using Core.Events;
 using NUnit.Framework;
@@ -7,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using VHierarchy.Libs;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerAttack : MonoBehaviour, IPlayerComponent
@@ -20,20 +22,19 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
 
     private SkillSO _skillSO;
     private EventChannelSO _skillChannel;
+    private EventChannelSO _cameraChannel;
 
-    private bool _isCooltime;
-    private bool _isAttackable;
-
-    public void SetSkillReady(bool value)
+    public void SkillReady(SkillSO skill)
     {
-        IsSkillReady = value;
-        _isAttackable = value;
+        _skillSO = skill;
+        IsSkillReady = true;
     }
     public void Initialize(Player player)
     {
         _player= player;
         _input = player.Input;
         _skillChannel = player.SkillChannel;
+        _cameraChannel = player.cameraChannel;
 
         AddEvents();
     }
@@ -43,25 +44,6 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         RemoveEvents();
     }
 
-    private void Update()
-    {
-        if (IsSkillReady)
-        {
-            CheckSkill();
-
-            Vector3 atkPos = _input.GetWorldPosition();
-            SetTargetSkill(atkPos, _skillSO.Range, CheckDistance(atkPos,transform.position)?Color.green:Color.red);
-        }
-        else
-        {
-            if (_targetSkillObj.activeSelf == true) _targetSkillObj.SetActive(false);
-        }
-    }
-    private void CheckSkill()
-    {
-        if (_skillSO == null) _skillSO = _player.CurrentSkill;
-        if (_targetSkillObj.activeSelf == false) _targetSkillObj.SetActive(true);
-    }
     private void AddEvents()
     {
         _input.OnAttackPressed += HandleAttackPress;
@@ -83,6 +65,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     {
         SpawnSkillEvent evt = SkillEvent.SetSkillEvent;
 
+        Debug.Assert(_skillSO == null,"skill이 없습니다.");
         evt.Skill = _skillSO;
         evt.StartPosition = transform.position;
         evt.TargetPosition = pos;
@@ -96,20 +79,43 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
 
     private void HandleAttackPress()
     {
+        if (!IsSkillReady) return;
+        IsSkillReady = false;
+
         Vector3 AttackPosition = _input.GetWorldPosition();
-        if (_isCooltime && !_isAttackable) return;
-        if (!CheckDistance(AttackPosition, transform.position)) return;
+        //if (_isCooltime && !_isAttackable) return;
+        //if (!CheckDistance(AttackPosition, transform.position)) return;
 
         ActiveSkill(AttackPosition);
-
-        _isCooltime = true;
-
-        _skillSO = _player.CurrentSkill;
-
-        
         _player.CanMove = false;
-        IsSkillReady = false;
-        _targetSkillObj.SetActive(false);
+
+        _player.GetCompo<PlayerAnimation>().SetState(AnimationState.Attack);
+
+
+        CameraShakeEvent evt = CameraEvent.CameraShakeEvent;
+        evt.Power = 1f;
+        evt.Duration = 0f;
+        _cameraChannel.InvokeEvent(evt);
+        //_isCooltime = true;
+
+        //_skillSO = _player.CurrentSkill;
+
+
+        //_player.CanMove = false;
+        //IsSkillReady = false;
+        //_targetSkillObj.SetActive(false);
         //대충 애니메이션
+    }
+    private IEnumerator SetAttackPostition()
+    {
+        while (true)
+        {
+            yield return null;
+
+            if (!IsSkillReady) break;
+
+            Vector3 atkPos = _input.GetWorldPosition();
+            SetTargetSkill(atkPos, _skillSO.Range, CheckDistance(atkPos, transform.position) ? Color.green : Color.red);
+        }
     }
 }
