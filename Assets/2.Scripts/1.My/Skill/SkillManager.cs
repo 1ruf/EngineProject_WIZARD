@@ -19,7 +19,6 @@ public class SkillManager : MonoBehaviour
     private void HandleSkillSpawn(SpawnSkillEvent callback)
     {
         SKILL_TYPE sType = callback.Skill.SkillType.Type;
-
         switch (sType)
         {
             case SKILL_TYPE.Summon:
@@ -30,15 +29,11 @@ public class SkillManager : MonoBehaviour
 
     private void SummonSkill(SkillSO skill, Vector3 targetPos)
     {
-
-    }
-    private void ThrowSkill()
-    {
-
-    }
-    private void DefenseSkill()
-    {
-
+        GameObject effect = Instantiate(skill.skillEffect,transform);
+        if (effect.TryGetComponent(out Skill skillScr) == false) return;
+        effect.transform.position = targetPos;
+        effect.SetActive(true);
+        skillScr.UseSkill(targetPos);
     }
 
 

@@ -22,7 +22,6 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
 
     private SkillSO _skillSO;
     private EventChannelSO _skillChannel;
-    private EventChannelSO _cameraChannel;
 
     public void SkillReady(SkillSO skill)
     {
@@ -34,7 +33,6 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         _player= player;
         _input = player.Input;
         _skillChannel = player.SkillChannel;
-        _cameraChannel = player.cameraChannel;
 
         AddEvents();
     }
@@ -61,14 +59,15 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         color.a = 0.5f;
         _targetSkillObj.GetComponent<SpriteRenderer>().color = color;
     }
-    private void ActiveSkill(Vector3 pos)
+    private void ActiveSkill()
     {
-        SpawnSkillEvent evt = SkillEvent.SetSkillEvent;
+        Vector3 AttackPosition = _input.GetWorldPosition();
 
-        Debug.Assert(_skillSO == null,"skill이 없습니다.");
+        SpawnSkillEvent evt = SkillEvent.SetSkillEvent;
+        Debug.Assert(_skillSO != null,"skill이 없습니다.");
         evt.Skill = _skillSO;
         evt.StartPosition = transform.position;
-        evt.TargetPosition = pos;
+        evt.TargetPosition = AttackPosition;
 
         _skillChannel.InvokeEvent(evt);
     }
@@ -82,29 +81,10 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         if (!IsSkillReady) return;
         IsSkillReady = false;
 
-        Vector3 AttackPosition = _input.GetWorldPosition();
-        //if (_isCooltime && !_isAttackable) return;
-        //if (!CheckDistance(AttackPosition, transform.position)) return;
-
-        ActiveSkill(AttackPosition);
+        ActiveSkill();
         _player.CanMove = false;
 
         _player.GetCompo<PlayerAnimation>().SetState(AnimationState.Attack);
-
-
-        CameraShakeEvent evt = CameraEvent.CameraShakeEvent;
-        evt.Power = 1f;
-        evt.Duration = 0f;
-        _cameraChannel.InvokeEvent(evt);
-        //_isCooltime = true;
-
-        //_skillSO = _player.CurrentSkill;
-
-
-        //_player.CanMove = false;
-        //IsSkillReady = false;
-        //_targetSkillObj.SetActive(false);
-        //대충 애니메이션
     }
     private IEnumerator SetAttackPostition()
     {

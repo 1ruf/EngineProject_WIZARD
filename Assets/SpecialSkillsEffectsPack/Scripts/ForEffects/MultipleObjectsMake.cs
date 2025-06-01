@@ -58,10 +58,7 @@ public class MultipleObjectsMake : _ObjectsMakeBase
             if (isObjectAttachToParent)
                 obj.transform.parent = this.transform;
             obj.transform.localScale = scale;
-            if (prefab.TryGetComponent(out DamageCaster caster))
-            {
-                caster.DamageDealer(5);//테스트 지우ㅡㅓ
-            }
+            //DAMAGE주기
         }
     }
 }

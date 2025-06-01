@@ -16,7 +16,6 @@ public class Player : MonoBehaviour
     public Dictionary<Type, IPlayerComponent> _components;
 
     public Transform camTarget;
-    public SkillSO CurrentSkill;
     public EventChannelSO SkillChannel;
     public EventChannelSO cameraChannel;
     private void Awake()

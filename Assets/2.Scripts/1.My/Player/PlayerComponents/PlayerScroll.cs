@@ -8,7 +8,7 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
 {
     [SerializeField] private float slowMotioSpeed = 0.2f;
     private Player _player;
-    private SkillSO _currentSkillSO;
+    [SerializeField] private SkillSO _currentSkillSO;
     private PlayerInputSO _input;
 
     private bool _isCreating;
