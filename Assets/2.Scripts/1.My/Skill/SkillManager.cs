@@ -7,6 +7,7 @@ using UnityEngine;
 public class SkillManager : MonoBehaviour
 {
     [SerializeField] private EventChannelSO skillChannel;
+    [SerializeField] private PlayerFinderSO playerFinder;
 
     private void Awake()
     {
@@ -29,13 +30,18 @@ public class SkillManager : MonoBehaviour
 
     private void SummonSkill(SkillSO skill, Vector3 targetPos)
     {
+        if (CheckDistance(targetPos, (float)skill.SkillRange.Range) == false) return;
+
         GameObject effect = Instantiate(skill.skillEffect,transform);
         if (effect.TryGetComponent(out Skill skillScr) == false) return;
         effect.transform.position = targetPos;
         effect.SetActive(true);
         skillScr.UseSkill(targetPos);
     }
-
+    private bool CheckDistance(Vector3 targetPos, float targetDistance)
+    {
+        return targetDistance > Vector3.Distance(playerFinder.Target.transform.position, targetPos);
+    }
 
     #region AddEvents
     private void AddListeners()

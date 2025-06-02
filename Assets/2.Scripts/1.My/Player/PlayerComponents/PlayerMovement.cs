@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float sprintMultily = 1.4f;
     [SerializeField] private float rotationSpeed = 8f;
+    [SerializeField] private float moveSmoothTime = 0.1f;
+
+    private Vector3 _currentVelocity;
 
     private PlayerAnimation plrAnim;
     private Player _player;
@@ -58,20 +61,18 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
 
     private void CalcMovement()
     {
-        _moveDir = Vector3.zero;
+        Vector3 targetDir = Vector3.zero;
         if (_player.CanMove)
         {
             float speed = moveSpeed;
-
             if (_isSprint)
                 speed *= sprintMultily;
 
-            _moveDir = GetMovement().normalized * speed;
+            targetDir = GetMovement().normalized * speed;
         }
-        else
-        {
-            _moveDir = Vector3.zero;
-        }
+
+        // Lerp 또는 SmoothDamp로 보간
+        _moveDir = Vector3.SmoothDamp(_moveDir, targetDir, ref _currentVelocity, moveSmoothTime);
     }
 
 
