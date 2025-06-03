@@ -1,5 +1,6 @@
 using Core;
 using Core.Events;
+using DG.Tweening;
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -25,6 +26,9 @@ public class SkillManager : MonoBehaviour
             case SKILL_TYPE.Summon:
                 SummonSkill(callback.Skill, callback.TargetPosition);
                 break;
+            case SKILL_TYPE.Throw:
+                ThrowSkill(callback.Skill, callback.TargetPosition);
+                break;
         }
     }
 
@@ -35,6 +39,16 @@ public class SkillManager : MonoBehaviour
         GameObject effect = Instantiate(skill.skillEffect,transform);
         if (effect.TryGetComponent(out Skill skillScr) == false) return;
         effect.transform.position = targetPos;
+        effect.SetActive(true);
+        skillScr.UseSkill(targetPos, skill);
+    }
+    private void ThrowSkill(SkillSO skill, Vector3 targetPos)
+    {
+        if (CheckDistance(targetPos, (float)skill.SkillRange.Range) == false) return;
+
+        GameObject effect = Instantiate(skill.skillEffect, transform);
+        if (effect.TryGetComponent(out Skill skillScr) == false) return;
+        effect.transform.position = playerFinder.Target.OrbHandler.position;
         effect.SetActive(true);
         skillScr.UseSkill(targetPos, skill);
     }

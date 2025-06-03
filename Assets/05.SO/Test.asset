@@ -17,5 +17,5 @@ MonoBehaviour:
   Range: 1
   SkillRange: {fileID: 11400000, guid: df59a0703f9172742acf452becb19942, type: 2}
   SkillAttribute: {fileID: 11400000, guid: bc2a450b0f3849b4fa994fe1d5ac932b, type: 2}
-  SkillType: {fileID: 11400000, guid: c7c7048f26c78f44c9e6c9488755c44e, type: 2}
-  skillEffect: {fileID: 2577799381811689623, guid: 86f13725b4ff9ad42a72e88c515ce948, type: 3}
+  SkillType: {fileID: 11400000, guid: 70b2b61043b2b6a498265178b884d0a8, type: 2}
+  skillEffect: {fileID: 8985969522935247618, guid: fc26ff072ea854544ae7f3ff65a6cb5d, type: 3}

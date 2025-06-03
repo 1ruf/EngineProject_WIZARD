@@ -8,7 +8,6 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
 {
     [SerializeField] private float slowMotioSpeed = 0.2f;
     [SerializeField] private SkillSO _currentSkillSO;
-    [SerializeField] private Transform orbHandler;
     private Player _player;
     private PlayerInputSO _input;
     private PlayerMovement _movement;
@@ -47,11 +46,11 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
         //대충 만들어서 넘겨주기
         _player.GetCompo<PlayerAttack>().SkillReady(_currentSkillSO);
 
-        Instantiate(_currentSkillSO.SkillAttribute.Orb, orbHandler);
+        Instantiate(_currentSkillSO.SkillAttribute.Orb, _player.OrbHandler);
     }
     public void RemoveOrb()
     {
-        foreach (Transform child in orbHandler)
+        foreach (Transform child in _player.OrbHandler)
         {
             child.gameObject.SetActive(false);
         }

@@ -8,6 +8,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [field: SerializeField] public PlayerInputSO Input { get; private set; }
+    [field: SerializeField] public Transform OrbHandler {get;private set;}
     public int Hp { get; private set; }
     public int Mp { get; private set; }
 
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
     public Dictionary<Type, IPlayerComponent> _components;
 
     public Transform camTarget;
+
     public EventChannelSO SkillChannel;
     public EventChannelSO cameraChannel;
     private void Awake()

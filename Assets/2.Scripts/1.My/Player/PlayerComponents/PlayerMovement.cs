@@ -57,8 +57,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
 
     private void ApplyGravity()
     {
-        if (IsGround && _verticalVelocity < 0)
-            _verticalVelocity = -0.03f; //»ìÂ¦ ¾Æ·¡·Î ´ç°ÜÁÖ´Â Èû
+        if (IsGround && _verticalVelocity < 0.03f)
+            _verticalVelocity = -0.05f; //»ìÂ¦ ¾Æ·¡·Î ´ç°ÜÁÖ´Â Èû
         else
             _verticalVelocity += gravity * Time.fixedDeltaTime;
 
@@ -67,7 +67,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
 
     private void SetRotation()
     {
-        if (_moveDir.magnitude > 0.05f)
+        print(_moveDir);
+        if (_moveDir.magnitude > 0.3f)
         {
             Vector3 lookDir = new Vector3(_moveDir.x, 0, _moveDir.z);
             Quaternion targetRot = Quaternion.LookRotation(lookDir);

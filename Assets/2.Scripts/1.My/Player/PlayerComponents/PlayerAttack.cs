@@ -30,6 +30,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     {
         _skillSO = skill;
         IsSkillReady = true;
+        SetAttackPostition();
     }
     public void Initialize(Player player)
     {
@@ -54,14 +55,13 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         _input.OnAttackPressed -= HandleAttackPress;
     }
 
-    private void SetTargetSkill(Vector3 targetPos,float radius, Color color)
+    private void SetTargetSkill(bool value,int radius = 0)
     {
+        _targetSkillObj.gameObject.SetActive(value);
+        if (!value) return;
+
+        radius *= 2;
         _targetSkillObj.transform.localScale = new Vector3(radius, radius, 1);
-        _targetSkillObj.transform.position = targetPos + new Vector3(0,0.01f,0);
-
-        color.a = 0.5f;
-
-        _targetSkillObj.GetComponent<SpriteRenderer>().color = color;
     }
     private void OrbDestroy()
     {
@@ -74,6 +74,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         Vector3 AttackPosition = _input.GetWorldPosition(); //이거 수정해야될수도
 
         OrbDestroy();
+        SetTargetSkill(false);
 
         SpawnSkillEvent evt = SkillEvent.SetSkillEvent;
         Debug.Assert(_skillSO != null,"skill이 없습니다.");
@@ -101,16 +102,8 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
 
         _player.GetCompo<PlayerAnimation>().SetState(AnimationState.Attack);////////////////////////////////////////마법 종류에 따라서 애니메이션 다르게 하기
     }
-    private IEnumerator SetAttackPostition()
+    private void SetAttackPostition()
     {
-        while (true)
-        {
-            yield return null;
-
-            if (!IsSkillReady) break;
-
-            Vector3 atkPos = _input.GetWorldPosition();
-            SetTargetSkill(atkPos, _skillSO.Range, CheckDistance(atkPos, transform.position) ? Color.green : Color.red);
-        }
+        SetTargetSkill(true,(int)_skillSO.SkillRange.Range);
     }
 }
