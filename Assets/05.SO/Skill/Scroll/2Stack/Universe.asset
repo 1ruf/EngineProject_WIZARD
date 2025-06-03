@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Universe
   m_EditorClassIdentifier: 
   Name: Wind
-  attribute: 2
+  Orb: {fileID: 2900873356921439398, guid: 91c122786ab1fcf4c87a7479697d6150, type: 3}
+  attribute: 1

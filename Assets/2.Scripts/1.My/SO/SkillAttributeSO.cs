@@ -4,6 +4,7 @@ using UnityEngine;
 public class SkillAttributeSO : ScriptableObject
 {
     public string Name;
+    public GameObject Orb;
     public SKILL_ATTRIBUTE attribute;
 }
 public enum SKILL_ATTRIBUTE

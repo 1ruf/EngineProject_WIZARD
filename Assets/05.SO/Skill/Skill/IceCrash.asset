@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IceCrash
   m_EditorClassIdentifier: 
   Name: "\uC5BC\uC74C \uAE30\uB465"
-  Damage: 5
+  Damage: 10
   Range: 3
   SkillRange: {fileID: 11400000, guid: 12726ba79a2d4bb48985160e05b9334b, type: 2}
   SkillAttribute: {fileID: 11400000, guid: bc2a450b0f3849b4fa994fe1d5ac932b, type: 2}

@@ -4,11 +4,16 @@ using UnityEngine;
 public class PlayerAnimatorTrigger : MonoBehaviour, IPlayerComponent
 {
     public event Action OnAnimationEnd;
+    public event Action OnSpellActiveeMotion;
 
     private void AnimationOver()
     {
         OnAnimationEnd?.Invoke();
-        print("애니메이션 종료");
+    }
+
+    private void SpellActive()
+    {
+        OnSpellActiveeMotion?.Invoke();
     }
 
     public void Initialize(Player player) { }

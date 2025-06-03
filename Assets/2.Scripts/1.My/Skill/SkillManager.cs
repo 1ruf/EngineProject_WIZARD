@@ -36,7 +36,7 @@ public class SkillManager : MonoBehaviour
         if (effect.TryGetComponent(out Skill skillScr) == false) return;
         effect.transform.position = targetPos;
         effect.SetActive(true);
-        skillScr.UseSkill(targetPos);
+        skillScr.UseSkill(targetPos, skill);
     }
     private bool CheckDistance(Vector3 targetPos, float targetDistance)
     {

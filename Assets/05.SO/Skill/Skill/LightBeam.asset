@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "\uBE5B\uAE30end"
   Damage: 10
-  Range: 5
+  Range: 8
   SkillRange: {fileID: 11400000, guid: 12726ba79a2d4bb48985160e05b9334b, type: 2}
   SkillAttribute: {fileID: 11400000, guid: 489bffcbd62870840b9bb1880532b776, type: 2}
   SkillType: {fileID: 11400000, guid: c7c7048f26c78f44c9e6c9488755c44e, type: 2}

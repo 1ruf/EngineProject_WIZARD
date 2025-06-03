@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Hologram
   m_EditorClassIdentifier: 
   Name: Hologram
+  Orb: {fileID: 7785082046528739332, guid: af672082c07ec8741a13695bc771bb5f, type: 3}
   attribute: 3

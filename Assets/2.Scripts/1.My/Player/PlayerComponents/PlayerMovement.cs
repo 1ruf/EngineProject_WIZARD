@@ -1,4 +1,5 @@
 using Players;
+using System;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -6,10 +7,13 @@ using UnityEngine.Rendering;
 public class PlayerMovement : MonoBehaviour, IPlayerComponent
 {
     [SerializeField] private CharacterController charController;
+    [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float sprintMultily = 1.4f;
     [SerializeField] private float rotationSpeed = 8f;
     [SerializeField] private float moveSmoothTime = 0.1f;
+
+    public bool IsGround => charController.isGrounded;
 
     private Vector3 _currentVelocity;
 
@@ -19,6 +23,8 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     private Transform _playerTrm;
     private PlayerInputSO _input;
     private Vector3 _moveDir;
+
+    private float _verticalVelocity;
 
     private bool _isSprint;
 
@@ -40,18 +46,28 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     {
         _isSprint = obj;
     }
-
     private void FixedUpdate()
     {
+        ApplyGravity();
         CalcMovement();
         SetRotation();
         Move();
         SetAnimation();//¡Î≥ª ∫Ò»ø¿≤¿˚ πŸ≤„æﬂ¥Ô
     }
 
+    private void ApplyGravity()
+    {
+        if (IsGround && _verticalVelocity < 0)
+            _verticalVelocity = -0.03f; //ªÏ¬¶ æ∆∑°∑Œ ¥Á∞‹¡÷¥¬ »˚
+        else
+            _verticalVelocity += gravity * Time.fixedDeltaTime;
+
+        _moveDir.y = _verticalVelocity;
+    }
+
     private void SetRotation()
     {
-        if (_moveDir.sqrMagnitude > 0.01f)
+        if (_moveDir.magnitude > 0.05f)
         {
             Vector3 lookDir = new Vector3(_moveDir.x, 0, _moveDir.z);
             Quaternion targetRot = Quaternion.LookRotation(lookDir);
@@ -91,8 +107,6 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
             plrAnim.SetState(AnimationState.Walk);
         }
     }
-
-
     private Vector3 GetMovement()
     {
         Vector3 camForward = _camTargetTrm.forward;
