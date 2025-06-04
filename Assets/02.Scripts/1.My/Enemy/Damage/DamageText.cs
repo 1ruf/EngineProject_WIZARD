@@ -17,6 +17,8 @@ public class DamageText : MonoBehaviour
     public void SetText(string text,Action endAction = null)
     {
         tmp.text = text;
+        tmp.rectTransform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), 0.1f).OnComplete(() => tmp.rectTransform.DOScale(new Vector3(0.2f, 0.2f, 0.2f), 0.1f));
+        tmp.rectTransform.DOAnchorPosY(tmp.rectTransform.anchoredPosition.y + 1f,2f);
         StartCoroutine(TextDestroy(1f,endAction));
     }
 

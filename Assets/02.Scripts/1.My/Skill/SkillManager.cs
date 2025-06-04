@@ -50,9 +50,9 @@ public class SkillManager : MonoBehaviour
             case SKILL_TYPE.FocusRanged:
                 return 0;
             case SKILL_TYPE.MiddleRanged:
-                return 4;
+                return 3;
             case SKILL_TYPE.WideRanged:
-                return 8f;
+                return 5f;
             default:
                 return 0;
         }

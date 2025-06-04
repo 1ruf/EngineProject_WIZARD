@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee85f060af661b54eaec54692cb153b7, type: 3}
+  m_Name: LightBeam_m
+  m_EditorClassIdentifier: 
+  Name: "\uBE5B\uAE30\uB465"
+  Damage: 10
+  Range: 5
+  SkillRange: {fileID: 11400000, guid: df59a0703f9172742acf452becb19942, type: 2}
+  SkillAttribute: {fileID: 11400000, guid: 489bffcbd62870840b9bb1880532b776, type: 2}
+  SkillType: {fileID: 11400000, guid: ff294b0d417feba4ba2be2d956343768, type: 2}
+  skillEffect: {fileID: 2562908306957309610, guid: acb8408527499f14ca768dca78f50dd1, type: 3}
