@@ -3,13 +3,13 @@ using Core;
 using System.Collections;
 using UnityEngine;
 
-public class SummonSkill : Skill
+public class SummonSkill : MonoBehaviour
 {
     [SerializeField] private EventChannelSO cameraChannel;
     [Header("Shake")]
     [SerializeField] private float impactTime = 0f;
     [SerializeField] private float power = 1f;
-    protected override void Active(SkillSO skill,Vector3 OriginPos, Vector3 targetPos)
+    public void Active(SkillSO skill,Vector3 OriginPos, Vector3 targetPos)
     {
         ApplyDamage(skill.Range,skill.Damage);
 

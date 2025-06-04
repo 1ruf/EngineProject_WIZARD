@@ -20,37 +20,23 @@ public class SkillManager : MonoBehaviour
     }
     private void HandleSkillSpawn(SpawnSkillEvent callback)
     {
-        SKILL_TYPE sType = callback.Skill.SkillType.Type;
-        switch (sType)
-        {
-            case SKILL_TYPE.Summon:
-                SummonSkill(callback.Skill, callback.TargetPosition);
-                break;
-            case SKILL_TYPE.Throw:
-                ThrowSkill(callback.Skill, callback.TargetPosition);
-                break;
-        }
+        SummonSkill(callback.Skill,callback.StartPosition, callback.TargetPosition);
     }
 
-    private void SummonSkill(SkillSO skill, Vector3 targetPos)
+    private void SummonSkill(SkillSO skill,Vector3 originPos, Vector3 targetPos)
     {
         if (CheckDistance(targetPos, (float)skill.SkillRange.Range) == false) return;
 
         GameObject effect = Instantiate(skill.skillEffect,transform);
-        if (effect.TryGetComponent(out Skill skillScr) == false) return;
+        if (effect.TryGetComponent(out Skill skillScr) == false)
+        {
+            Destroy(effect);
+            return;
+        };
+
         effect.transform.position = targetPos;
         effect.SetActive(true);
-        skillScr.UseSkill(targetPos, skill);
-    }
-    private void ThrowSkill(SkillSO skill, Vector3 targetPos)
-    {
-        if (CheckDistance(targetPos, (float)skill.SkillRange.Range) == false) return;
-
-        GameObject effect = Instantiate(skill.skillEffect, transform);
-        if (effect.TryGetComponent(out Skill skillScr) == false) return;
-        effect.transform.position = playerFinder.Target.OrbHandler.position;
-        effect.SetActive(true);
-        skillScr.UseSkill(targetPos, skill);
+        skillScr.UseSkill(originPos,targetPos, skill);
     }
     private bool CheckDistance(Vector3 targetPos, float targetDistance)
     {

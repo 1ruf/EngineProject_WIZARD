@@ -67,7 +67,6 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
 
     private void SetRotation()
     {
-        print(_moveDir);
         if (_moveDir.magnitude > 0.3f)
         {
             Vector3 lookDir = new Vector3(_moveDir.x, 0, _moveDir.z);

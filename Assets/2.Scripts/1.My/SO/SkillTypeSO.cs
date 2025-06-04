@@ -8,7 +8,6 @@ public class SkillTypeSO : ScriptableObject
 }
 public enum SKILL_TYPE
 {
-    Summon,
-    Throw,
-    Defense
+    FocusRanged,
+    WideRanged
 }
