@@ -47,4 +47,3 @@ MonoBehaviour:
   effect: {fileID: 514299956771434512, guid: 80a9e9dab9ebd24438c2bfa98022ec95, type: 3}
   spawnCount: 1
   spawnSpeed: 0
-  spawnRange: 0

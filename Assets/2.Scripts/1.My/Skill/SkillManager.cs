@@ -36,11 +36,26 @@ public class SkillManager : MonoBehaviour
 
         effect.transform.position = targetPos;
         effect.SetActive(true);
-        skillScr.UseSkill(originPos,targetPos, skill);
+        skillScr.UseSkill(originPos,targetPos, skill, CheckRange(skill.SkillType.Type));
     }
     private bool CheckDistance(Vector3 targetPos, float targetDistance)
     {
         return targetDistance > Vector3.Distance(playerFinder.Target.transform.position, targetPos);
+    }
+
+    private float CheckRange(SKILL_TYPE sT)
+    {
+        switch (sT)
+        {
+            case SKILL_TYPE.FocusRanged:
+                return 0;
+            case SKILL_TYPE.MiddleRanged:
+                return 4;
+            case SKILL_TYPE.WideRanged:
+                return 8f;
+            default:
+                return 0;
+        }
     }
 
     #region AddEvents

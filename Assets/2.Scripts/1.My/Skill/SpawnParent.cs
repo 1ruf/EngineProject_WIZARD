@@ -1,34 +1,33 @@
+using System.Collections;
 using Unity.Behavior;
 using UnityEngine;
 
 public class SpawnParent : Skill
 {
     [SerializeField] private GameObject effect;
-    [Header("Spawn")]
-    [SerializeField] private int spawnCount = 1;
-    [SerializeField] private float spawnSpeed;
-    [SerializeField] private float spawnRange;
+    
 
     private SkillSO _curSkill;
 
-    protected override void Active(SkillSO skill, Vector3 OriginPos, Vector3 targetPos)
+    protected override void Active(SkillSO skill, Vector3 OriginPos, Vector3 targetPos, float spwanRange)
     {
         _curSkill = skill;
-        Spawn(skill,OriginPos,targetPos);
+        StartCoroutine(Spawn(skill, OriginPos, targetPos, spwanRange));
     }
 
-    private void Spawn(SkillSO skill, Vector3 OriginPos, Vector3 targetPos)
+    private IEnumerator Spawn(SkillSO skill, Vector3 OriginPos, Vector3 targetPos, float spwanRange)
     {
-        for (int i = 0; i < spawnCount; i++)
+        for (int i = 0; i < skill.SkillType.SpawnCount; i++)
         {
             GameObject eff = Instantiate(effect,transform);
             eff.GetOrAddComponent<SummonSkill>().Active(skill,OriginPos,targetPos);
-            eff.transform.position = new Vector3(GetRandom(targetPos.x,spawnRange), targetPos.y,GetRandom(targetPos.z,spawnRange));
+            eff.transform.position = new Vector3(GetRandom(targetPos.x,spwanRange), targetPos.y,GetRandom(targetPos.z, spwanRange));
+            yield return new WaitForSeconds(skill.SkillType.SpawnSpeed);
         }
     }
 
     private float GetRandom(float originV, float range)
     {
-        return originV + Random.Range(0, range);
+        return originV + Random.Range(-range, range);
     }
 }

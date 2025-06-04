@@ -11,10 +11,9 @@ public class SummonSkill : MonoBehaviour
     [SerializeField] private float power = 1f;
     public void Active(SkillSO skill,Vector3 OriginPos, Vector3 targetPos)
     {
-        ApplyDamage(skill.Range,skill.Damage);
 
         gameObject.SetActive(true);
-        transform.position = targetPos;
+        ApplyDamage(skill.Range,skill.Damage + Random.Range(-1,1));
         StartCoroutine(ImpactShake(impactTime));
     }
     private IEnumerator ImpactShake(float time)

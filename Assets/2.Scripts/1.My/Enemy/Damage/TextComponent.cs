@@ -13,8 +13,15 @@ public class TextComponent : MonoBehaviour
     private GameObject InstantiateText()
     {
         GameObject textObj = Instantiate(textComponent,transform);
-        textObj.transform.position = transform.position;
         textObj.SetActive(true);
+
+        Vector3 origin = transform.position;
+        textObj.transform.position = new Vector3(origin.x + GetRandom(-1f,1f), origin.y + GetRandom(0f, 1f), origin.z + GetRandom(-1f, 1f));
         return textObj;
+    }
+
+    private float GetRandom(float min, float max)
+    {
+        return Random.Range(min, max);
     }
 }

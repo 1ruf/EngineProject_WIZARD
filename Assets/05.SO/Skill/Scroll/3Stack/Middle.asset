@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb4212957ef161f48a4de73eef8976cb, type: 3}
-  m_Name: Focus
+  m_Name: Middle
   m_EditorClassIdentifier: 
   Name: "\uC18C\uD658\uAC2F\uC218"
-  Type: 0
-  SpawnCount: 1
-  SpawnSpeed: 0
+  Type: 1
+  SpawnCount: 3
+  SpawnSpeed: 0.3
