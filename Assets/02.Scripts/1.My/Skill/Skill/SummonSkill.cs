@@ -1,7 +1,6 @@
-using Care.Event;
 using Core;
+using Core.Events;
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class SummonSkill : MonoBehaviour
@@ -10,22 +9,22 @@ public class SummonSkill : MonoBehaviour
     [Header("Shake")]
     [SerializeField] private float impactTime = 0f;
     [SerializeField] private float power = 1f;
-    public void Active(SkillSO skill,Vector3 OriginPos, Vector3 targetPos)
+    public void Active(SkillSO skill, Vector3 OriginPos, Vector3 targetPos)
     {
         gameObject.SetActive(true);
-        StartCoroutine(ImpactShake(skill,impactTime));
+        StartCoroutine(ImpactShake(skill, impactTime));
     }
-    private IEnumerator ImpactShake(SkillSO skill,float time)
+    private IEnumerator ImpactShake(SkillSO skill, float time)
     {
         yield return new WaitForSeconds(time);
 
         CameraShakeEvent evt = CameraEvent.CameraShakeEvent;
         evt.Power = power;
-        ApplyDamage(skill.Range, skill.Damage + Random.Range(-1, 1));
+        ApplyDamage(skill.Range, skill.Damage + Random.Range(-skill.Damage/5, skill.Damage/5));
         cameraChannel.InvokeEvent(evt);
     }
 
-    private void ApplyDamage(float attackRange,int damage)
+    private void ApplyDamage(float attackRange, int damage)
     {
         attackRanged = attackRange;
         Collider[] colliders = Physics.OverlapSphere(transform.position, attackRange);

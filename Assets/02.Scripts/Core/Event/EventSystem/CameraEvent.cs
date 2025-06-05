@@ -1,7 +1,4 @@
-using Core;
-using UnityEngine;
-
-namespace Care.Event
+namespace Core.Events
 {
     public class CameraEvent
     {

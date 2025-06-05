@@ -1,22 +1,13 @@
-using Care.Event;
 using Core;
 using Core.Events;
-using NUnit.Framework;
 using Players;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Unity.VisualScripting;
 using UnityEngine;
-using VHierarchy.Libs;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerAttack : MonoBehaviour, IPlayerComponent
 {
     [SerializeField] private GameObject _targetSkillObj;
 
-    public bool IsSkillReady {get; private set;}
+    public bool IsSkillReady { get; private set; }
 
     private Player _player;
     private PlayerInputSO _input;
@@ -34,7 +25,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     }
     public void Initialize(Player player)
     {
-        _player= player;
+        _player = player;
         _input = player.Input;
         _skillChannel = player.SkillChannel;
 
@@ -55,7 +46,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         _input.OnAttackPressed -= HandleAttackPress;
     }
 
-    private void SetTargetSkill(bool value,int radius = 0)
+    private void SetTargetSkill(bool value, int radius = 0)
     {
         _targetSkillObj.gameObject.SetActive(value);
         if (!value) return;
@@ -65,7 +56,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     }
     private void OrbDestroy()
     {
-        if(_scroll == null) _scroll = _player.GetCompo<PlayerScroll>();
+        if (_scroll == null) _scroll = _player.GetCompo<PlayerScroll>();
         _scroll.SetSkillActive(false);
         _scroll.RemoveOrb();
     }
@@ -77,7 +68,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         SetTargetSkill(false);
 
         SpawnSkillEvent evt = SkillEvent.SetSkillEvent;
-        Debug.Assert(_skillSO != null,"skill이 없습니다.");
+        Debug.Assert(_skillSO != null, "skill이 없습니다.");
         evt.Skill = _skillSO;
         evt.StartPosition = transform.position;
         evt.TargetPosition = AttackPosition;
@@ -86,7 +77,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
 
         _animTrigger.OnSpellActiveeMotion -= ActiveSkill;
     }
-    private bool CheckDistance(Vector3 v1,Vector3 v2)
+    private bool CheckDistance(Vector3 v1, Vector3 v2)
     {
         return Vector3.Distance(v1, v2) < (int)_skillSO.SkillRange.Range;
     }
@@ -104,6 +95,6 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     }
     private void SetAttackPostition()
     {
-        SetTargetSkill(true,(int)_skillSO.SkillRange.Range);
+        SetTargetSkill(true, (int)_skillSO.SkillRange.Range);
     }
 }

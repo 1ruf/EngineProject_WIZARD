@@ -1,10 +1,8 @@
-using Care.Event;
 using Core;
+using Core.Events;
 using Players;
-using System;
 using Unity.Cinemachine;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class PlayerCamera : MonoBehaviour, IPlayerComponent
 {

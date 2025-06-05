@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee85f060af661b54eaec54692cb153b7, type: 3}
   m_Name: LightBeam
   m_EditorClassIdentifier: 
-  Name: "\uBE5B\uAE30\uB465"
+  Name: "\uBE5B"
   Damage: 10
   Range: 5
   SkillRange: {fileID: 11400000, guid: df59a0703f9172742acf452becb19942, type: 2}
