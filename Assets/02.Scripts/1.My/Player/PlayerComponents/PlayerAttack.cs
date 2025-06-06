@@ -13,6 +13,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     private PlayerInputSO _input;
     private PlayerAnimatorTrigger _animTrigger;
     private PlayerScroll _scroll;
+    private PlayerStat _stat;
 
     private SkillSO _skillSO;
     private EventChannelSO _skillChannel;
@@ -28,6 +29,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         _player = player;
         _input = player.Input;
         _skillChannel = player.SkillChannel;
+        _stat = player.GetCompo<PlayerStat>();
 
         AddEvents();
     }
@@ -73,6 +75,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         evt.StartPosition = transform.position;
         evt.TargetPosition = AttackPosition;
 
+
         _skillChannel.InvokeEvent(evt);
 
         _animTrigger.OnSpellActiveeMotion -= ActiveSkill;
@@ -84,7 +87,9 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
 
     private void HandleAttackPress()
     {
-        if (!IsSkillReady) return;
+        if (IsSkillReady == false || _skillSO.Mana > _player.Mp) return;
+        _stat.ManaUse(_skillSO.Mana);
+
         IsSkillReady = false;
 
         if (_animTrigger == null) _animTrigger = _player.GetCompo<PlayerAnimatorTrigger>();

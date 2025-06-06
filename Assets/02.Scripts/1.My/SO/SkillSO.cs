@@ -6,6 +6,7 @@ public class SkillSO : ScriptableObject
     public string Name;
     public int Damage;
     public int Range;
+    public int Mana;
 
     public SkillRangeSO SkillRange /*{ get; private set; }*/;
     public SkillAttributeSO SkillAttribute /*{ get; private set; }*/;

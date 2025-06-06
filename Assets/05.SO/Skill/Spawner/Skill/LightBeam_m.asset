@@ -15,6 +15,7 @@ MonoBehaviour:
   Name: "\uBE5B\uAE30\uB465"
   Damage: 10
   Range: 5
+  Mana: 25
   SkillRange: {fileID: 11400000, guid: df59a0703f9172742acf452becb19942, type: 2}
   SkillAttribute: {fileID: 11400000, guid: 489bffcbd62870840b9bb1880532b776, type: 2}
   SkillType: {fileID: 11400000, guid: ff294b0d417feba4ba2be2d956343768, type: 2}

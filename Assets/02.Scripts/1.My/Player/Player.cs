@@ -30,8 +30,13 @@ public class Player : MonoBehaviour
         _components = new Dictionary<Type, IPlayerComponent>();
         InitStat();
         AddComponents();
-        InitializeComponents();
+        InitializeComponents(); 
     }
+    //private void Update()
+    //{
+    //    Mp += (int)Time.time * 1;
+    //    SetStatUI();        
+    //}
     private void InitStat()
     {
         Hp = maxHp;

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
-public class PlayerStatComponent : MonoBehaviour, IPlayerComponent
+public class PlayerStat : MonoBehaviour, IPlayerComponent
 {
     private EventChannelSO cameraChannel;
     private Volume impactVolume;
@@ -24,6 +24,7 @@ public class PlayerStatComponent : MonoBehaviour, IPlayerComponent
         if (Keyboard.current.fKey.wasPressedThisFrame)
         {
             Damage(15);
+            ManaUse(15);
         }
     }
     public void Initialize(Player player)

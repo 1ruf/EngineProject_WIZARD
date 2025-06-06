@@ -4,6 +4,8 @@ using UnityEditor.Experimental.GraphView;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem.iOS;
+using UnityEngine.Rendering;
+using UnityEngine.VFX;
 
 public class PlayerScroll : MonoBehaviour, IPlayerComponent
 {
@@ -12,10 +14,17 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
     private PlayerInputSO _input;
     private PlayerMovement _movement;
 
+    private Volume _slowTimeVolume;
+
     private bool isSkillActivated;
 
     private bool _isCreating;
     private bool _skillUsing;
+
+    private void Awake()
+    {
+        _slowTimeVolume = GetComponentInChildren<Volume>();
+    }
     public void Initialize(Player player)
     {
         _player = player;
@@ -58,7 +67,8 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
     {
         foreach (Transform child in _player.OrbHandler)
         {
-            child.gameObject.SetActive(false);
+            Destroy(child.gameObject);
+            //child.gameObject.SetActive(false);
         }
     }
 
@@ -69,6 +79,7 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
 
     private void BuildSkill()
     {
+        SetTimeSlow(true);
         AddSpaceListener(()=>HandleCreatePressed(), ()=>S1());
     }
 
@@ -79,24 +90,39 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
 
         };
 
-        
+        SetTimeSlow(false);
         SetSkill(skill);
+
+        AddSpaceListener(()=>BuildComplete(),() => HandleCreatePressed());
     }
 
     private void S1()
     {
+        print("build1");
         AddSpaceListener(() => S1(), () => S2());
     }
     private void S2()
     {
         AddSpaceListener(() => S2(), () => S3());
+        print("build2");
     }
     private void S3()
     {
         AddSpaceListener(() => S3(), () => BuildComplete());
+        print("build3");
     }
 
-    
+    private void SetTimeSlow(bool value)
+    {
+        if (value)
+        {
+            _slowTimeVolume.weight = 1f;
+            Time.timeScale = 0.2f;
+            return;
+        }
+        _slowTimeVolume.weight = 0f;
+        Time.timeScale = 1f;
+    }
 
     private void AddSpaceListener(Action beforeAction,Action nexAction)
     {
