@@ -49,12 +49,11 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     private void FixedUpdate()
     {
         ApplyGravity();
-        CalcMovement();
         SetRotation();
-        Move();
         SetAnimation();//¡Î≥ª ∫Ò»ø¿≤¿˚ πŸ≤„æﬂ¥Ô
+        CalcMovement();
+        Move();
     }
-
     private void ApplyGravity()
     {
         if (IsGround && _verticalVelocity < 0.03f)

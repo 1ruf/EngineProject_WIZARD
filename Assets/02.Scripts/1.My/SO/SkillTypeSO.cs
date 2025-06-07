@@ -12,7 +12,7 @@ public class SkillTypeSO : ScriptableObject
 }
 public enum SKILL_TYPE
 {
-    FocusRanged,
-    MiddleRanged,
-    WideRanged
+    FocusRanged = 0,
+    MiddleRanged = 3,
+    WideRanged = 5
 }

@@ -1,3 +1,5 @@
+using Core;
+using Core.Events;
 using Players;
 using System;
 using UnityEditor.Experimental.GraphView;
@@ -9,17 +11,26 @@ using UnityEngine.VFX;
 
 public class PlayerScroll : MonoBehaviour, IPlayerComponent
 {
-    [SerializeField] private SkillSO _currentSkillSO;
+    [SerializeField] private SkillSO currentSkillSO;
+    [SerializeField] private EventChannelSO gameChannel;
     private Player _player;
     private PlayerInputSO _input;
     private PlayerMovement _movement;
 
+    private BuildSkillEvent _buildEvt => SkillEvent.BuildSkillEvent;
+
     private Volume _slowTimeVolume;
+    private Action _beforeAction;
 
     private bool isSkillActivated;
 
     private bool _isCreating;
     private bool _skillUsing;
+
+
+    [SerializeField] private SkillRangeSO sampleRange;
+    [SerializeField] private SkillAttributeSO sampleAttri;
+    [SerializeField] private SkillTypeSO sampleType;
 
     private void Awake()
     {
@@ -36,7 +47,7 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
 
     private void OnDestroy()
     {
-        _input.OnSkillCreatePressed -= HandleCreatePressed;
+        _input.OnSkillCreatePressed -= _beforeAction;
     }
 
     private void HandleSkillUsed()
@@ -74,42 +85,48 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
 
     public SkillSO GetSkill()
     {
-        return _currentSkillSO;
+        return currentSkillSO;
     }
 
     private void BuildSkill()
-    {
+    { 
+        _buildEvt.SkillSO = new SkillSO();
         SetTimeSlow(true);
-        AddSpaceListener(()=>HandleCreatePressed(), ()=>S1());
+        AddSpaceListener(HandleCreatePressed, S1);
     }
 
     private void BuildComplete()
     {
-        SkillSO skill = new SkillSO()
-        {
+        SkillSO skill = _buildEvt.SkillSO;
 
-        };
-
+        AddSpaceListener(BuildComplete,HandleCreatePressed);
         SetTimeSlow(false);
         SetSkill(skill);
-
-        AddSpaceListener(()=>BuildComplete(),() => HandleCreatePressed());
     }
 
     private void S1()
     {
-        print("build1");
-        AddSpaceListener(() => S1(), () => S2());
+        SkillRangeSO range = sampleRange;
+
+        //SkillRangeSO range = new();
+        _buildEvt.SkillSO.SkillRange = range;
+        AddSpaceListener(S1, S2);
     }
     private void S2()
     {
-        AddSpaceListener(() => S2(), () => S3());
-        print("build2");
+        SkillAttributeSO attribute = sampleAttri;
+
+        //SkillAttributeSO attribute = new();
+        _buildEvt.SkillSO.SkillAttribute = attribute;
+        AddSpaceListener( S2, S3);
     }
     private void S3()
     {
-        AddSpaceListener(() => S3(), () => BuildComplete());
-        print("build3");
+        SkillTypeSO type = sampleType;
+
+        //SkillTypeSO type = new();
+        _buildEvt.SkillSO.SkillType = type;
+        AddSpaceListener(S3,BuildComplete);
     }
 
     private void SetTimeSlow(bool value)
@@ -126,6 +143,7 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
 
     private void AddSpaceListener(Action beforeAction,Action nexAction)
     {
+        _beforeAction = beforeAction;
         _input.OnSkillCreatePressed -= beforeAction;
         _input.OnSkillCreatePressed += nexAction;
     }

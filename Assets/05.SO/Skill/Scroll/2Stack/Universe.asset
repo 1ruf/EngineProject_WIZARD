@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Wind
   Orb: {fileID: 2900873356921439398, guid: 91c122786ab1fcf4c87a7479697d6150, type: 3}
+  SkillEffect: {fileID: 2562908306957309610, guid: acb8408527499f14ca768dca78f50dd1, type: 3}
   attribute: 1

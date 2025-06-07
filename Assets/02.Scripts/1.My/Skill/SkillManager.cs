@@ -27,7 +27,7 @@ public class SkillManager : MonoBehaviour
     {
         if (CheckDistance(targetPos, (float)skill.SkillRange.Range) == false) return;
 
-        GameObject effect = Instantiate(skill.skillEffect,transform);
+        GameObject effect = Instantiate(skill.SkillAttribute.SkillEffect,transform);
         if (effect.TryGetComponent(out Skill skillScr) == false)
         {
             Destroy(effect);
@@ -36,26 +36,11 @@ public class SkillManager : MonoBehaviour
 
         effect.transform.position = targetPos;
         effect.SetActive(true);
-        skillScr.UseSkill(originPos,targetPos, skill, CheckRange(skill.SkillType.Type));
+        skillScr.UseSkill(originPos,targetPos, skill,(int)skill.SkillType.Type);
     }
     private bool CheckDistance(Vector3 targetPos, float targetDistance)
     {
         return targetDistance > Vector3.Distance(playerFinder.Target.transform.position, targetPos);
-    }
-
-    private float CheckRange(SKILL_TYPE sT)
-    {
-        switch (sT)
-        {
-            case SKILL_TYPE.FocusRanged:
-                return 0;
-            case SKILL_TYPE.MiddleRanged:
-                return 3;
-            case SKILL_TYPE.WideRanged:
-                return 5f;
-            default:
-                return 0;
-        }
     }
 
     #region AddEvents

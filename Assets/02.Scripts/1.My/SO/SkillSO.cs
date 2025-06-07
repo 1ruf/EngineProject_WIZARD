@@ -12,8 +12,6 @@ public class SkillSO : ScriptableObject
     public SkillAttributeSO SkillAttribute /*{ get; private set; }*/;
     public SkillTypeSO SkillType /*{get; private set;}*/;
 
-    public GameObject skillEffect;
-
     public void SetSkillSO(SkillRangeSO rangeSO,SkillAttributeSO attributeSO,SkillTypeSO skillType)
     {
         this.SkillRange = rangeSO;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb4212957ef161f48a4de73eef8976cb, type: 3}
   m_Name: Wide
   m_EditorClassIdentifier: 
-  Name: "\uC18C\uD658\uAC2F\uC218"
-  Type: 2
+  Name: "\uC18C\uD658 \uAC2F\uC218/\uBC94\uC704"
+  Type: 5
   SpawnCount: 5
   SpawnSpeed: 0.2

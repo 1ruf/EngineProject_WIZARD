@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Ice
   Orb: {fileID: 5894300315732404020, guid: cc7f78ab35fbb134c91910a3f747f9e2, type: 3}
+  SkillEffect: {fileID: 7139342177800775526, guid: f85494d2981bd1b44afb4d01bda4fad4, type: 3}
   attribute: 0
