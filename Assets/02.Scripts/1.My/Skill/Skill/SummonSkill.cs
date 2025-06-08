@@ -14,7 +14,7 @@ public class SummonSkill : MonoBehaviour
         gameObject.SetActive(true);
         StartCoroutine(ImpactShake(skill, impactTime));
     }
-    private IEnumerator ImpactShake(SkillSO skill, float time)
+    private IEnumerator ImpactShake(SkillSO skill, float time)  
     {
         yield return new WaitForSeconds(time);
 

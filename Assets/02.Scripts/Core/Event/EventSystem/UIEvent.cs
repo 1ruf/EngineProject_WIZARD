@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 namespace Core.Events
 {
@@ -13,5 +14,9 @@ namespace Core.Events
 
         public float Hp;
         public float Mp;
+    }
+    public class SkillBuildEvent : GameEvent
+    {
+        public int StackCount;
     }
 }

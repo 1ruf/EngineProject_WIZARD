@@ -2,7 +2,10 @@ using Core;
 using Core.Events;
 using Players;
 using Unity.Cinemachine;
+using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
+using DG.Tweening.Core;
 
 public class PlayerCamera : MonoBehaviour, IPlayerComponent
 {
@@ -16,6 +19,7 @@ public class PlayerCamera : MonoBehaviour, IPlayerComponent
     [SerializeField] private float shakeThreshold = 0.01f;
     [SerializeField] private float decreaseSpeed = 1f;
 
+    private Player _player;
     private PlayerInputSO _input;
     private Transform _plrTrm;
 
@@ -25,6 +29,7 @@ public class PlayerCamera : MonoBehaviour, IPlayerComponent
     }
     public void Initialize(Player player)
     {
+        _player = player;
         _input = player.Input;
         _plrTrm = player.transform;
 
@@ -74,10 +79,24 @@ public class PlayerCamera : MonoBehaviour, IPlayerComponent
     }
     private void HandleLookPressed(bool presseed)
     {
+        if (_player.CanMove == false) return;
         _vCam.Lens.FieldOfView = Mathf.Lerp(_vCam.Lens.FieldOfView, presseed ? 30f : 60f, Time.time);
     }
     private void SetPointerLock(bool value)
     {
         Cursor.lockState = value ? CursorLockMode.Locked : CursorLockMode.None;
+    }
+    public void SceneChange(bool value)
+    {
+        if (value)
+        {
+            Camera main = Camera.main;
+            main.DOFieldOfView(60f, 0.5f).SetEase(Ease.InOutQuad);
+        }
+        else
+        {
+            _vCam.Lens.FieldOfView = Mathf.Lerp(150f, 60f, Time.time);
+        }
+        ///_vCam.enabled = value;
     }
 }
