@@ -5,6 +5,7 @@ using System;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.iOS;
 using UnityEngine.Rendering;
 using UnityEngine.VFX;
@@ -20,6 +21,7 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
     private BuildSkillEvent _buildEvt => SkillEvent.BuildSkillEvent;
 
     private Volume _slowTimeVolume;
+    private Skills _skills;
     private Action _beforeAction;
 
     private bool isSkillActivated;
@@ -27,14 +29,12 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
     private bool _isCreating;
     private bool _skillUsing;
 
-
-    [SerializeField] private SkillRangeSO sampleRange;
-    [SerializeField] private SkillAttributeSO sampleAttri;
-    [SerializeField] private SkillTypeSO sampleType;
+    private int _pressKey;
 
     private void Awake()
     {
         _slowTimeVolume = GetComponentInChildren<Volume>();
+        _skills = GetComponent<Skills>();
     }
     public void Initialize(Player player)
     {
@@ -44,7 +44,21 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
         _player.GetCompo<PlayerAnimatorTrigger>().OnAnimationEnd += HandleSkillUsed;
         _input.OnSkillCreatePressed += HandleCreatePressed;
     }
-
+    private void Update()
+    {
+        if (Keyboard.current.digit1Key.wasPressedThisFrame)
+        {
+            _pressKey = 0;
+        }
+        else if (Keyboard.current.digit2Key.wasPressedThisFrame)
+        {
+            _pressKey = 1;
+        }
+        else if (Keyboard.current.digit3Key.wasPressedThisFrame)
+        {
+            _pressKey = 2;
+        }
+    }
     private void OnDestroy()
     {
         _input.OnSkillCreatePressed -= _beforeAction;
@@ -106,25 +120,22 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
 
     private void S1()
     {
-        SkillRangeSO range = sampleRange;
-
-        //SkillRangeSO range = new();
+        SkillRangeSO range = new();
+        range = _skills.GetSkill<SkillRangeSO>(_pressKey);
         _buildEvt.SkillSO.SkillRange = range;
         AddSpaceListener(S1, S2);
     }
     private void S2()
     {
-        SkillAttributeSO attribute = sampleAttri;
-
-        //SkillAttributeSO attribute = new();
+        SkillAttributeSO attribute = new();
+        attribute = _skills.GetSkill<SkillAttributeSO>(_pressKey);
         _buildEvt.SkillSO.SkillAttribute = attribute;
         AddSpaceListener( S2, S3);
     }
     private void S3()
     {
-        SkillTypeSO type = sampleType;
-
-        //SkillTypeSO type = new();
+        SkillTypeSO type = new();
+        type = _skills.GetSkill<SkillTypeSO>(_pressKey);
         _buildEvt.SkillSO.SkillType = type;
         AddSpaceListener(S3,BuildComplete);
     }
