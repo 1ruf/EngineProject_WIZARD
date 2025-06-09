@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     {
         _isSprint = obj;
     }
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         ApplyGravity();
         SetRotation();

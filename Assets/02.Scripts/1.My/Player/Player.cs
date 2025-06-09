@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
 
     public bool CanMove { get; set; } = true;
 
-    public Dictionary<Type, IPlayerComponent> _components;
+    public Dictionary<Type, IPlayerComponent> Components;
 
     public Transform camTarget;
 
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     public EventChannelSO CameraChannel;
     private void Awake()
     {
-        _components = new Dictionary<Type, IPlayerComponent>();
+        Components = new Dictionary<Type, IPlayerComponent>();
         InitStat();
         AddComponents();
         InitializeComponents(); 
@@ -66,19 +66,19 @@ public class Player : MonoBehaviour
     protected virtual void AddComponents()
     {
         GetComponentsInChildren<IPlayerComponent>().ToList()
-            .ForEach(component => _components.Add(component.GetType(), component));
+            .ForEach(component => Components.Add(component.GetType(), component));
     }
 
     protected virtual void InitializeComponents()
     {
-        _components.Values.ToList().ForEach(component => component.Initialize(this));
+        Components.Values.ToList().ForEach(component => component.Initialize(this));
     }
 
     public T GetCompo<T>() where T : IPlayerComponent
-           => (T)_components.GetValueOrDefault(typeof(T));
+           => (T)Components.GetValueOrDefault(typeof(T));
 
     public IPlayerComponent GetCompo(Type type)
-        => _components.GetValueOrDefault(type);
+        => Components.GetValueOrDefault(type);
 }
 public enum AnimationState
 {

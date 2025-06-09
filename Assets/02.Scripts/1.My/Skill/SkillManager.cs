@@ -1,3 +1,4 @@
+using Blade.Entities;
 using Core;
 using Core.Events;
 using DG.Tweening;
@@ -8,7 +9,7 @@ using UnityEngine;
 public class SkillManager : MonoBehaviour
 {
     [SerializeField] private EventChannelSO skillChannel;
-    [SerializeField] private PlayerFinderSO playerFinder;
+    [SerializeField] private EntityFinderSO playerFinder;
 
     private void Awake()
     {

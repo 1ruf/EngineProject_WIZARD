@@ -1,7 +1,6 @@
 using Core;
 using Core.Events;
-using System;
-using Unity.Behavior.GraphFramework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SkillBuildUI : MonoBehaviour
@@ -9,38 +8,49 @@ public class SkillBuildUI : MonoBehaviour
     [SerializeField] private GameObject skillBuildUI;
 
     [SerializeField] private EventChannelSO uiChannel;
+
+    [SerializeField] private List<StackList> stackLists = new();
+
     private Animator _anim;
 
     private bool _uiEnabled;
     private int _stackCnt;
+    private int _skillCnt;
     private void Awake()
     {
         _anim = GetComponentInChildren<Animator>();
-        uiChannel.AddListener<SkillBuildEvent>(OnSkillBuildEvent);
+        uiChannel.AddListener<SkillBuildUiEvent>(OnSkillBuildEvent);
 
         skillBuildUI.SetActive(false);
         _uiEnabled = false;
     }
     private void OnDestroy()
     {
-        uiChannel.RemoveListener<SkillBuildEvent>(OnSkillBuildEvent);
+        uiChannel.RemoveListener<SkillBuildUiEvent>(OnSkillBuildEvent);
     }
 
-    private void OnSkillBuildEvent(SkillBuildEvent callback)
+    private void OnSkillBuildEvent(SkillBuildUiEvent callback)
     {
-        callback.StackCount = _stackCnt;
-        if (callback.StackCount > 3) 
+        _skillCnt = callback.SkillNum;
+        _stackCnt = callback.StackCount;
+        _anim.SetInteger("StackCount", _stackCnt);
+        if (callback.StackCount >= 3)
         {
             SetBuildUI(false);
             return;
         }
         if (_uiEnabled == false) SetBuildUI(true);
-        _anim.SetInteger("StackCount", _stackCnt);
+
+        SetSkillSize(stackLists[_stackCnt]);
     }
 
     private void SetBuildUI(bool value)
     {
         skillBuildUI.SetActive(value);
         _uiEnabled = value;
+    }
+    private void SetSkillSize(StackList stack)
+    {
+        stack.SetEnable(_skillCnt);
     }
 }

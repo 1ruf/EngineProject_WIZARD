@@ -5,7 +5,8 @@ namespace Core.Events
 {
     public class UIEvent
     {
-        public static readonly PlayerStatEvent PlayerStatEvent = new PlayerStatEvent();
+        public static readonly PlayerStatEvent PlayerStatEvent = new();
+        public static readonly SkillBuildUiEvent SkillBuildUiEvent = new();
     }
     public class PlayerStatEvent : GameEvent
     {
@@ -15,8 +16,9 @@ namespace Core.Events
         public float Hp;
         public float Mp;
     }
-    public class SkillBuildEvent : GameEvent
+    public class SkillBuildUiEvent : GameEvent
     {
         public int StackCount;
+        public int SkillNum;
     }
 }

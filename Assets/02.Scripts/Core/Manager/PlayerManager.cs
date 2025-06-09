@@ -1,3 +1,4 @@
+using Blade.Entities;
 using UnityEngine;
 using static UnityEngine.Rendering.VolumeComponent;
 
@@ -5,7 +6,7 @@ using static UnityEngine.Rendering.VolumeComponent;
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private Player player;
-    [SerializeField] private PlayerFinderSO playerFinder;
+    [SerializeField] private EntityFinderSO playerFinder;
 
     private void Awake()
     {
