@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Focus
   m_EditorClassIdentifier: 
   Name: "\uC18C\uD658 \uBC94\uC704/\uAC2F\uC218"
+  ManaCost: 5
+  DamageDebuff: 1
   Type: 0
   SpawnCount: 1
   SpawnSpeed: 0

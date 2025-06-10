@@ -20,8 +20,8 @@ public class SummonSkill : MonoBehaviour
 
         CameraShakeEvent evt = CameraEvent.CameraShakeEvent;
         evt.Power = power;
-        ApplyDamage(skill.Range, skill.Damage + Random.Range(-skill.Damage/5, skill.Damage/5));
         cameraChannel.InvokeEvent(evt);
+        ApplyDamage(skill.Range, skill.Damage + Random.Range(-skill.Damage/5, skill.Damage/5));
     }
 
     private void ApplyDamage(float attackRange, int damage)
@@ -31,9 +31,10 @@ public class SummonSkill : MonoBehaviour
         foreach (Collider collider in colliders)
         {
             print(collider);
-            if (collider.TryGetComponent(out IDamageable damageable))
+            if (collider.TryGetComponent(out Blade.Combat.IDamageable damageable))
             {
-                damageable.Damage(damage);
+                print("АјАн:"+damage);
+                damageable.ApplyDamage(new DamageData() { damage = damage},transform.position,Vector3.zero,null,null);
             }
         }
     }

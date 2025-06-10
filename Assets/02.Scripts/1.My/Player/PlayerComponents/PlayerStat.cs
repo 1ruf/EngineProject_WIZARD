@@ -34,16 +34,20 @@ public class PlayerStat : MonoBehaviour, IPlayerComponent
 
         _hp = player.Hp;
         _mp = player.Mp;
+
+        StatApply();
     }
 
     public void Damage(float damage)
     {
+        StatApply();
         _hp -= damage;
         SetImpact(damage);
         StatApply();
     }
     public void ManaUse(float mana)
     {
+        StatApply();
         _mp -= mana;
         StatApply();
     }

@@ -10,6 +10,7 @@ namespace Blade.Combat
         private Entity _entity;
         private ActionData _actionData;
         private EntityStatCompo _statCompo;
+        private TextComponent _dmgText;
 
         [SerializeField] private StatSO hpStat;
         [SerializeField] private float maxHealth;
@@ -20,6 +21,7 @@ namespace Blade.Combat
             _entity = entity;
             _actionData = entity.GetCompo<ActionData>();
             _statCompo = entity.GetCompo<EntityStatCompo>();
+            _dmgText = entity.GetCompo<TextComponent>();
         }
 
         public void AfterInitialize()
@@ -54,6 +56,8 @@ namespace Blade.Combat
 
             //넉백은 나중에 처리한다.
             //데미지도 나중에 처리한다.
+
+            _dmgText.Damage((int)damage.damage);
 
             currentHealth = Mathf.Clamp(currentHealth - damage.damage, 0, maxHealth);
             if(currentHealth<= 0)

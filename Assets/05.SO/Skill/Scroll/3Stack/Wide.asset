@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Wide
   m_EditorClassIdentifier: 
   Name: "\uC18C\uD658 \uAC2F\uC218/\uBC94\uC704"
+  ManaCost: 15
+  DamageDebuff: 0.5
   Type: 5
   SpawnCount: 5
   SpawnSpeed: 0.2

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Lv3
   m_EditorClassIdentifier: 
   Level: 3
+  ManaCost: 7
   Range: 35

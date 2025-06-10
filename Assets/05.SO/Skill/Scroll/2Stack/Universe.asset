@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Universe
   m_EditorClassIdentifier: 
   Name: Wind
+  ManaCost: 4
+  Damage: 12
+  AttackRange: 3
   Orb: {fileID: 2900873356921439398, guid: 91c122786ab1fcf4c87a7479697d6150, type: 3}
   SkillEffect: {fileID: 2562908306957309610, guid: acb8408527499f14ca768dca78f50dd1, type: 3}
   attribute: 1

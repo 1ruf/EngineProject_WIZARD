@@ -134,7 +134,7 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
         SetBuildCount();
         SkillRangeSO range = new();
         range = _skills.GetSkill<SkillRangeSO>(_pressKey);
-        print(range);
+        _buildEvt.SkillSO.Mana += range.ManaCost;
         _buildEvt.SkillSO.SkillRange = range;
         AddSpaceListener(S1, S2);
     }
@@ -144,7 +144,9 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
         SetBuildCount();
         SkillAttributeSO attribute = new();
         attribute = _skills.GetSkill<SkillAttributeSO>(_pressKey);
-        print(attribute);
+        _buildEvt.SkillSO.Range = attribute.AttackRange;
+        _buildEvt.SkillSO.Damage = attribute.Damage;
+        _buildEvt.SkillSO.Mana += attribute.ManaCost;
         _buildEvt.SkillSO.SkillAttribute = attribute;
         AddSpaceListener(S2, S3);
     }
@@ -154,7 +156,9 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
         SetBuildCount();
         SkillTypeSO type = new();
         type = _skills.GetSkill<SkillTypeSO>(_pressKey);
-        print(type);
+        float curDmg = _buildEvt.SkillSO.Damage;
+        _buildEvt.SkillSO.Damage = (int)(curDmg * type.DamageDebuff);
+        _buildEvt.SkillSO.Mana += type.ManaCost;
         _buildEvt.SkillSO.SkillType = type;
         AddSpaceListener(S3, BuildComplete);
     }

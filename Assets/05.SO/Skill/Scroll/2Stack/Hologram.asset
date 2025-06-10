@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Hologram
   m_EditorClassIdentifier: 
   Name: Hologram
+  ManaCost: 3
+  Damage: 10
+  AttackRange: 4
   Orb: {fileID: 7785082046528739332, guid: af672082c07ec8741a13695bc771bb5f, type: 3}
   SkillEffect: {fileID: 2389010297601856946, guid: 41b41efd3f5fdac49a5eb1791a199e22, type: 3}
   attribute: 3

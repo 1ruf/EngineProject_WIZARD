@@ -4,6 +4,8 @@ using UnityEngine;
 public class SkillRangeSO : ScriptableObject
 {
     public int Level;
+    public int ManaCost;
+    public float DamageDebuff;
     public SKILL_RANGE Range;
 
     public int GetRange(SKILL_RANGE range)
