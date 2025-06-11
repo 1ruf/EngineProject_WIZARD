@@ -42,7 +42,7 @@ namespace Blade.Enemies
             //SetColliderActive(true);
             //SetRagDollActive(true);
             const float force = 30f;
-            AddForceToRagDoll(_actionData.HitNormal * force, _actionData.HitPoint);
+            //AddForceToRagDoll(_actionData.HitNormal * force, _actionData.HitPoint);
         }
 
         //private void SetRagDollActive(bool isActive)

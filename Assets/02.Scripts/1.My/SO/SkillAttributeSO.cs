@@ -4,6 +4,8 @@ using UnityEngine;
 public class SkillAttributeSO : ScriptableObject
 {
     public string Name;
+    public string Description;
+
     public int ManaCost;
     public int Damage;
     public int AttackRange;

@@ -4,6 +4,8 @@ using UnityEngine;
 public class SkillTypeSO : ScriptableObject
 {
     public string Name;
+    public string Description;
+
     public int ManaCost;
     public float DamageDebuff;
     public SKILL_TYPE Type;

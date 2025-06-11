@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Universe
   m_EditorClassIdentifier: 
   Name: Wind
+  Description: "\uC2A4\uD0AC : \uBE5B\\n\uC18C\uBAA8 \uB9C8\uB098:4, \uB300\uBBF8\uC9C0:
+    +12. \uACF5\uACA9\uBC94\uC704:3"
   ManaCost: 4
   Damage: 12
   AttackRange: 3

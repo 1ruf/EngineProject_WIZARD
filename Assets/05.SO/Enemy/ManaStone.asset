@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7462d971bc9d2f147bdcb8adf5cd7590, type: 3}
-  m_Name: Lv1
+  m_Script: {fileID: 11500000, guid: a12ffde3d65b26442841a9187e2b3acc, type: 3}
+  m_Name: ManaStone
   m_EditorClassIdentifier: 
-  Level: 1
-  Description: "\uC2A4\uD0AC \uC0AC\uC6A9 \uBC94\uC704\\n\uB808\uBCA81, \uC18C\uBAA8
-    \uB9C8\uB098:2"
-  ManaCost: 2
-  DamageDebuff: 0
-  Range: 12
+  RefillMana: 15
+  RefillHp: 0

@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class StackList : MonoBehaviour
 {
     [SerializeField] private List<Transform> outlines;
+    [SerializeField] private Skills skills;
+    [SerializeField] private int idx;
 
     private void OnEnable()
     {
@@ -15,7 +17,7 @@ public class StackList : MonoBehaviour
             SetUi(childTrm, false);
         }
     }
-    public void SetEnable(int index)
+    public void SetEnable(int index,SkillBuildUI buildUI)
     {
         SetUi(outlines[index], true);
         foreach (Transform childTrm in outlines)
@@ -23,7 +25,26 @@ public class StackList : MonoBehaviour
             if (childTrm != outlines[index])
             {
                 SetUi(childTrm, false);
+                SetDesc(index, buildUI);
             }
+        }
+    }
+    private void SetDesc(int index,SkillBuildUI buildUI)
+    {
+        switch (index)
+        {
+            case 0:
+                SkillRangeSO range = skills.GetSkill<SkillRangeSO>(idx);
+                buildUI.SetInfo(range.name, range.Description);
+                break;
+            case 1:
+                SkillAttributeSO attribute = skills.GetSkill<SkillAttributeSO>(idx);
+                buildUI.SetInfo(attribute.name, attribute.Description);
+                break;
+            case 2:
+                SkillTypeSO type = skills.GetSkill<SkillTypeSO>(idx);
+                buildUI.SetInfo(type.name, type.Description);
+                break;
         }
     }
     private void SetUi(Transform trm,bool value)

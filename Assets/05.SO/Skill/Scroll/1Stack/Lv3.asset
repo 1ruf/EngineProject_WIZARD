@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: Lv3
   m_EditorClassIdentifier: 
   Level: 3
+  Description: "\uC2A4\uD0AC \uC0AC\uC6A9 \uBC94\uC704\\n\uB808\uBCA83, \uC18C\uBAA8
+    \uB9C8\uB098:7"
   ManaCost: 7
+  DamageDebuff: 0
   Range: 35

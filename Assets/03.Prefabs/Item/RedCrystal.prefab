@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4672362351658542407, guid: 02c94f888348ea94da86ad1e514930d9, type: 3}
       propertyPath: m_Name
-      value: Crystal_Example_01 Variant
+      value: RedCrystal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4672362351658542407, guid: 02c94f888348ea94da86ad1e514930d9, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8719259753070812244, guid: 02c94f888348ea94da86ad1e514930d9, type: 3}
       propertyPath: m_LocalScale.x
@@ -26,15 +30,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8719259753070812244, guid: 02c94f888348ea94da86ad1e514930d9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.05
+      value: -39.37489
       objectReference: {fileID: 0}
     - target: {fileID: 8719259753070812244, guid: 02c94f888348ea94da86ad1e514930d9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7
+      value: 4.333
       objectReference: {fileID: 0}
     - target: {fileID: 8719259753070812244, guid: 02c94f888348ea94da86ad1e514930d9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.52649
+      value: -12.069094
       objectReference: {fileID: 0}
     - target: {fileID: 8719259753070812244, guid: 02c94f888348ea94da86ad1e514930d9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -74,6 +78,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4672362351658542407, guid: 02c94f888348ea94da86ad1e514930d9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1356043646916987453}
+    - targetCorrespondingSourceObject: {fileID: 4672362351658542407, guid: 02c94f888348ea94da86ad1e514930d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 219638882954390664}
   m_SourcePrefab: {fileID: 100100000, guid: 02c94f888348ea94da86ad1e514930d9, type: 3}
 --- !u!1 &1833435070932894039 stripped
 GameObject:
@@ -130,3 +137,18 @@ CapsuleCollider:
   m_Height: 0.31422
   m_Direction: 1
   m_Center: {x: -0.0008414984, y: 0.0057540014, z: 0.0034649968}
+--- !u!114 &219638882954390664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833435070932894039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb9cf02019a65b43a6585b94187d081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crystalSO: {fileID: 11400000, guid: e7a7ce482934489459ee9a8e92ae4c78, type: 2}
+  playerFinder: {fileID: 11400000, guid: 85816dd192818be4485e3aaa2716d82a, type: 2}
+  moveSpeed: 2

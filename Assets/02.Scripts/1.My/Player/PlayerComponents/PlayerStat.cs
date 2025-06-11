@@ -1,5 +1,6 @@
 using Core;
 using Core.Events;
+using NUnit.Framework.Interfaces;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -38,16 +39,14 @@ public class PlayerStat : MonoBehaviour, IPlayerComponent
         StatApply();
     }
 
-    public void Damage(float damage)
+    public void Damage(float damage,bool useImpact = true)
     {
-        StatApply();
         _hp -= damage;
-        SetImpact(damage);
+        if(useImpact == true) SetImpact(damage);
         StatApply();
     }
     public void ManaUse(float mana)
     {
-        StatApply();
         _mp -= mana;
         StatApply();
     }

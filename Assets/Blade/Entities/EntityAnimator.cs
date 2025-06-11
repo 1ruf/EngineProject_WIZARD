@@ -20,6 +20,7 @@ namespace Blade.Entities
         public void SetAnimatorOff()
         {
             animator.enabled = false;
+            _entity.gameObject.SetActive(false);
         }
     }
 }

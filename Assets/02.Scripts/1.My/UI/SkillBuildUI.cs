@@ -2,6 +2,7 @@ using Core;
 using Core.Events;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class SkillBuildUI : MonoBehaviour
 {
@@ -9,8 +10,12 @@ public class SkillBuildUI : MonoBehaviour
 
     [SerializeField] private EventChannelSO uiChannel;
 
+
+    [SerializeField] private SkillInformation skillInformation;
+
     [SerializeField] private List<StackList> stackLists = new();
 
+    private GameObject skillInfoObj => skillInformation.gameObject;
     private Animator _anim;
 
     private bool _uiEnabled;
@@ -21,7 +26,7 @@ public class SkillBuildUI : MonoBehaviour
         _anim = GetComponentInChildren<Animator>();
         uiChannel.AddListener<SkillBuildUiEvent>(OnSkillBuildEvent);
 
-        skillBuildUI.SetActive(false);
+        SetBuildUI(false);
         _uiEnabled = false;
     }
     private void OnDestroy()
@@ -37,6 +42,7 @@ public class SkillBuildUI : MonoBehaviour
         if (callback.StackCount >= 3)
         {
             SetBuildUI(false);
+            SetInfoUI(false);
             return;
         }
         if (_uiEnabled == false) SetBuildUI(true);
@@ -46,11 +52,21 @@ public class SkillBuildUI : MonoBehaviour
 
     private void SetBuildUI(bool value)
     {
+        SetInfoUI(value);
         skillBuildUI.SetActive(value);
         _uiEnabled = value;
     }
+    public void SetInfoUI(bool value)
+    {
+        skillInfoObj.SetActive(value);
+    }
+    public void SetInfo(string name, string description)
+    {
+        skillInformation.SetInfo(name, description);
+        //SetInfoUI(true);
+    }
     private void SetSkillSize(StackList stack)
     {
-        stack.SetEnable(_skillCnt);
+        stack.SetEnable(_skillCnt,this);
     }
 }

@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e160e88d115db7746a44d236fad07448, type: 3}
-  m_Name: Wind
+  m_Script: {fileID: 11500000, guid: a12ffde3d65b26442841a9187e2b3acc, type: 3}
+  m_Name: BestStone
   m_EditorClassIdentifier: 
-  Name: Wind
-  Orb: {fileID: 2900873356921439398, guid: 91c122786ab1fcf4c87a7479697d6150, type: 3}
-  attribute: 1
+  RefillMana: 10
+  RefillHp: 15

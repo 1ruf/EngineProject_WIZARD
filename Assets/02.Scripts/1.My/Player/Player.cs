@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
     {
         this.Hp = hp;
         this.Mp = mp;
+        if (hp > maxHp) this.Hp = maxHp;
+        if(mp > maxMp) this.Mp = maxMp;
         SetStatUI();
     }
 

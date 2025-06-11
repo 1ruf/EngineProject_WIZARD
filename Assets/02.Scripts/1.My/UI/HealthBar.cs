@@ -13,4 +13,12 @@ public class HealthBar : BarUI
         healthBar1.fillAmount = fillV;
         healthBar2.DOFillAmount(fillV, 1f);
     }
+
+    public override void IncreaseValue(float value, float maxValue)
+    {
+        float fillV = value / maxValue;
+
+        healthBar1.fillAmount = fillV;
+        healthBar2.fillAmount = fillV;
+    }
 }

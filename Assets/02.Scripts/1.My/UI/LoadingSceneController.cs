@@ -12,8 +12,9 @@ public class LoadingSceneController : MonoBehaviour
     public static void LoadScene(string sceneName)
     {
         nextSceneName = sceneName;
-        SceneManager.LoadScene("LoadingScene");
+        SceneManager.LoadSceneAsync("LoadingScene", LoadSceneMode.Single);
     }
+
 
     private void Start()
     {
@@ -50,6 +51,7 @@ public class LoadingSceneController : MonoBehaviour
                 }
             }
         }
+        yield return new WaitForSeconds(0.1f);
         loadingText.text = $"Loading... {100}%";
     }
 }

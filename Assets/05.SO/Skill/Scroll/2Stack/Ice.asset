@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Ice
   m_EditorClassIdentifier: 
   Name: Ice
+  Description: "\uC2A4\uD0AC : \uC5BC\uC74C\\n\uC18C\uBAA8 \uB9C8\uB098:4, \uB300\uBBF8\uC9C0:
+    +15. \uACF5\uACA9\uBC94\uC704:4"
   ManaCost: 4
   Damage: 15
   AttackRange: 4
