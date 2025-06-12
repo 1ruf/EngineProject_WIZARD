@@ -1,9 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Assets.Blade.Enemies;
 using Blade.Entities;
-using UnityEditorInternal;
 using UnityEngine;
 
 namespace Blade.Enemies

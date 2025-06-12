@@ -56,7 +56,14 @@ ModelImporter:
       curves: []
       events:
       - time: 0.13365276
-        functionName: SpawnDefaultOrb
+        functionName: ResetAnimation
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.99656355
+        functionName: ResetAnimations
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

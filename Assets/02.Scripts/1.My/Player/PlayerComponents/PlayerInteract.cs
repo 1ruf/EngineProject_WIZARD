@@ -25,6 +25,6 @@ public class PlayerInteract : MonoBehaviour, IPlayerComponent
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, 5f);
+        Gizmos.DrawWireSphere(transform.position, 2f);
     }
 }

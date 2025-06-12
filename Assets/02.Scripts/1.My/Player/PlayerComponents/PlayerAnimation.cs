@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 public class PlayerAnimation : MonoBehaviour, IPlayerComponent
@@ -11,7 +12,6 @@ public class PlayerAnimation : MonoBehaviour, IPlayerComponent
         _animator = GetComponent<Animator>();
         _currentState = AnimationState.Idle;
         SetAnimatorParams(AnimationState.Idle);
-
         _isCanChange = true;
     }
 
@@ -34,10 +34,7 @@ public class PlayerAnimation : MonoBehaviour, IPlayerComponent
         _animator.SetBool("IDLE", state == AnimationState.Idle);
         _animator.SetBool("WALK", state == AnimationState.Walk);
         _animator.SetBool("RUN", state == AnimationState.Run);
-        //_animator.SetBool("ATTACK", state == AnimationState.Attack);
-
-        if (state == AnimationState.Attack)
-            _animator.SetTrigger("ATTACK");
+        _animator.SetBool("ATTACK", state == AnimationState.Attack);
     }
 }
 

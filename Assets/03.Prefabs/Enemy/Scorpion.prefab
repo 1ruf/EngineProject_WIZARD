@@ -1,0 +1,2390 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100476969686606110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5249029855013081292}
+  - component: {fileID: 1549668426387098438}
+  m_Layer: 0
+  m_Name: NavMovement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5249029855013081292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100476969686606110}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6961485893847524958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1549668426387098438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100476969686606110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f626f4ada884507b307764da0721564, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 7423645410493993411}
+  moveSpeedStat: {fileID: 11400000, guid: ef33bdc0e1f6bf2438a7e89b4be706f2, type: 2}
+  stopOffset: 0.05
+  rotateSpeed: 10
+--- !u!1 &110181012132596357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612161364717527817}
+  m_Layer: 0
+  m_Name: Venodonte_AntennaLeft2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1612161364717527817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110181012132596357}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0000000030252176, y: -0.000000018233186, z: -0.16368054, w: 0.9865134}
+  m_LocalPosition: {x: -0.11108449, y: -0.000000028312206, z: -0.0000000030060576}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5853828301084411990}
+  m_Father: {fileID: 5320098720900609150}
+  m_LocalEulerAnglesHint: {x: 0.40720075, y: 1.2902783, z: -19.946852}
+--- !u!1 &156995108806888666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5853828301084411990}
+  m_Layer: 0
+  m_Name: Venodonte_AntennaLeft3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5853828301084411990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156995108806888666}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000046923373, y: 0.000000086544304, z: -0.21675056, w: 0.97622705}
+  m_LocalPosition: {x: -0.165926, y: 0.00000007033348, z: 0.000000004933398}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1612161364717527817}
+  m_LocalEulerAnglesHint: {x: -0.045115907, y: 0.5486197, z: -26.17477}
+--- !u!1 &693500134948775555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1832691574790698886}
+  - component: {fileID: 999126363046234532}
+  m_Layer: 0
+  m_Name: ActionData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1832691574790698886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693500134948775555}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6961485893847524958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &999126363046234532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693500134948775555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c1c755d8ad4baea39a42fdeb7dc7a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &877643271373302786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5320098720900609150}
+  m_Layer: 0
+  m_Name: Venodonte_AntennaLeft1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5320098720900609150
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877643271373302786}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.075509004, y: -0.21081534, z: -0.24460848, w: 0.9434098}
+  m_LocalPosition: {x: -0.29641694, y: -0.023233231, z: -0.17342971}
+  m_LocalScale: {x: 0.9999999, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1612161364717527817}
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: -14.115175, y: -22.020384, z: -28.954113}
+--- !u!1 &1020164822379431829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5451626736273919898}
+  m_Layer: 0
+  m_Name: Venodonte_CheliceraeLowerLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5451626736273919898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020164822379431829}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.209972, y: -0.033841766, z: 0.8016801, w: 0.5586372}
+  m_LocalPosition: {x: -0.026869915, y: -0.19095334, z: -0.09410083}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: -13.72811, y: -7.923264, z: 129.30284}
+--- !u!1 &1119825286428615917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 703150266604190504}
+  m_Layer: 0
+  m_Name: Venodonte_LegRearLeft1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &703150266604190504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119825286428615917}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.18763761, y: -0.2553698, z: -0.6821928, w: 0.6589321}
+  m_LocalPosition: {x: 0.07172802, y: 0.056331556, z: -0.1569704}
+  m_LocalScale: {x: 0.99999994, y: 1.0000001, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5392317634723352216}
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: -37.647247, y: -4.772626, z: -95.62035}
+--- !u!1 &1197542112388995567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 345121922878304195}
+  m_Layer: 0
+  m_Name: Venodonte_LegFrontRight3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &345121922878304195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197542112388995567}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.00000013715614, y: -0.00000007647888, z: -0.7820694, w: 0.62319136}
+  m_LocalPosition: {x: -0.241921, y: 0.000000019073486, z: -0.000000038146972}
+  m_LocalScale: {x: 1, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3981397618460755798}
+  m_Father: {fileID: 7658189970140670535}
+  m_LocalEulerAnglesHint: {x: -0.0000018784434, y: -0.000024018349, z: -101.59693}
+--- !u!1 &1208150296370090751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6403737352211818370}
+  m_Layer: 0
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6403737352211818370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208150296370090751}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6961485893847524958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1555968360530477190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3981397618460755798}
+  m_Layer: 0
+  m_Name: Venodonte_LegFrontRight4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3981397618460755798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555968360530477190}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.00000058210964, y: -0.00000013093812, z: -0.568959, w: 0.8223659}
+  m_LocalPosition: {x: -0.35848063, y: 0, z: -0.00000015258789}
+  m_LocalScale: {x: 0.9999998, y: 1.0000001, z: 1.0000004}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 345121922878304195}
+  m_LocalEulerAnglesHint: {x: 0.00004384926, y: -0.00005061239, z: -68.45419}
+--- !u!1 &2325339737835265823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5108405316529007408}
+  - component: {fileID: 7963436760339011810}
+  m_Layer: 0
+  m_Name: WayPoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5108405316529007408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2325339737835265823}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 99754398245167774}
+  - {fileID: 8835183652168202192}
+  - {fileID: 3267506447889771240}
+  m_Father: {fileID: 6961485893847524958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7963436760339011810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2325339737835265823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b052c359c29d4c928f3a185110605c06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2477690561575431567
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4437915535062629865}
+  - component: {fileID: 3818835660571582217}
+  m_Layer: 0
+  m_Name: DamageCompo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4437915535062629865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477690561575431567}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6961485893847524958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3818835660571582217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477690561575431567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f5de198901402041944078f844317f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  criticalStat: {fileID: 11400000, guid: 13cc35272ec98cb4888a2dad65ef2abb, type: 2}
+  criticalDamageStat: {fileID: 11400000, guid: aa758b2f969b401479675072c8ea81ed, type: 2}
+--- !u!1 &2482629835560956550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9162779089971566331}
+  m_Layer: 0
+  m_Name: Venodonte_LegRearRight3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9162779089971566331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2482629835560956550}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.00000012752609, y: -0.00000014995787, z: 0.73013926, w: 0.6832984}
+  m_LocalPosition: {x: -0.34363803, y: 0, z: 0.0000000667572}
+  m_LocalScale: {x: 0.99999976, y: 0.9999995, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3009873378534271529}
+  m_Father: {fileID: 5847889599100508606}
+  m_LocalEulerAnglesHint: {x: 0.000016506667, y: 0.0000036925483, z: 92.433975}
+--- !u!1 &2891533272019210297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8584873566151239017}
+  m_Layer: 0
+  m_Name: Venodonte_LegRearLeft4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8584873566151239017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2891533272019210297}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000040670503, y: -0.00000018648855, z: -0.5132855, w: 0.8582179}
+  m_LocalPosition: {x: -0.4194097, y: -0.00000015258789, z: 0.000000057220458}
+  m_LocalScale: {x: 1.0000004, y: 1.0000004, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8578175964989893536}
+  m_LocalEulerAnglesHint: {x: -0.00004979494, y: 0.000007021496, z: -60.96181}
+--- !u!1 &2905409437785212787
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8835183652168202192}
+  - component: {fileID: 3462134833713597156}
+  m_Layer: 0
+  m_Name: Point (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8835183652168202192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905409437785212787}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.73, y: 0.72, z: -5.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5108405316529007408}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3462134833713597156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2905409437785212787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1dd83f70c749f2938b52455f44dd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3266587047275534014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2417687091226487387}
+  - component: {fileID: 2213324929074913221}
+  m_Layer: 0
+  m_Name: SpawnCore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2417687091226487387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266587047275534014}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6961485893847524958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2213324929074913221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266587047275534014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92cd1dfa8357e9498b2c92e64e77b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCorePrefab: {fileID: 1833435070932894039, guid: 44ef3cbadec1a0e468502d0e105644cc, type: 3}
+--- !u!1 &3441401660030527087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3009873378534271529}
+  m_Layer: 0
+  m_Name: Venodonte_LegRearRight4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3009873378534271529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3441401660030527087}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.00000040416586, y: -0.00000017498505, z: 0.51328564, w: 0.85821784}
+  m_LocalPosition: {x: -0.41940975, y: -0.0000003814697, z: -0.000000114440915}
+  m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9162779089971566331}
+  m_LocalEulerAnglesHint: {x: 0.000054010394, y: 0.000008482615, z: 60.982037}
+--- !u!1 &3511522966284433546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6906460064735465688}
+  - component: {fileID: 6257329197966003128}
+  m_Layer: 0
+  m_Name: Ragdoll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6906460064735465688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3511522966284433546}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6961485893847524958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6257329197966003128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3511522966284433546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db20ee93b0981034ba80402eff4b26be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ragDollParentTrm: {fileID: 0}
+  whatIsBody:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!1 &3725388146628859570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2884504315756528193}
+  m_Layer: 0
+  m_Name: root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2884504315756528193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3725388146628859570}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6897943151409628867}
+  m_Father: {fileID: 6616951171222542041}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &3948211088496328617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8040259613022299058}
+  m_Layer: 0
+  m_Name: Venodonte_LegRearRight1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8040259613022299058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3948211088496328617}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.6589499, y: 0.6821175, z: 0.25558582, w: 0.18755439}
+  m_LocalPosition: {x: 0.071728, y: 0.056331556, z: 0.157}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 0.9999998}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5847889599100508606}
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: -38.17824, y: -175.70132, z: -81.231606}
+--- !u!1 &3966304840172028396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6712535754725748699}
+  m_Layer: 0
+  m_Name: Venodonte_Tail1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6712535754725748699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966304840172028396}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000073102335, y: -0.000000111297425, z: -0.5489892, w: 0.83582944}
+  m_LocalPosition: {x: -0.28111818, y: 0.2941906, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8061156300164212582}
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: 0.002249221, y: -0.0055094957, z: -67.792534}
+--- !u!1 &4031420524078315094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1543782987607491308}
+  m_Layer: 0
+  m_Name: Venodonte_AntennaRight3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1543782987607491308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4031420524078315094}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000004403453, y: 0.000000097769465, z: 0.21675077, w: 0.976227}
+  m_LocalPosition: {x: -0.16592598, y: -0.000000057220458, z: 0.00000015258789}
+  m_LocalScale: {x: 0.99999976, y: 0.9999995, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8372924926667640604}
+  m_LocalEulerAnglesHint: {x: 0.70194376, y: 4.1168885, z: 26.168726}
+--- !u!1 &4098082102226261744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5847889599100508606}
+  m_Layer: 0
+  m_Name: Venodonte_LegRearRight2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5847889599100508606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4098082102226261744}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0000002056312, y: 0.00000007369606, z: -0.40080824, w: 0.91616195}
+  m_LocalPosition: {x: -0.16495019, y: 0, z: -0.000000028610229}
+  m_LocalScale: {x: 1.0000004, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9162779089971566331}
+  m_Father: {fileID: 8040259613022299058}
+  m_LocalEulerAnglesHint: {x: -0.000021076032, y: 0.00001571357, z: -47.469482}
+--- !u!1 &4256385109607183724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4488927161191353076}
+  m_Layer: 0
+  m_Name: Venodonte_CheliceraeLowerRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4488927161191353076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4256385109607183724}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5586372, y: 0.80168015, z: -0.033841614, w: 0.20997198}
+  m_LocalPosition: {x: -0.026869906, y: -0.19095336, z: 0.094}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: -11.720775, y: -169.37344, z: 49.196957}
+--- !u!1 &4368416289754369585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2708125682064810080}
+  m_Layer: 0
+  m_Name: Venodonte_FangUpperLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2708125682064810080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4368416289754369585}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.14454237, y: -0.17144081, z: 0.8613264, w: 0.4558864}
+  m_LocalPosition: {x: -0.13728938, y: -0.2299051, z: -0.045439605}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: 9.412612, y: -24.257809, z: 169.37749}
+--- !u!1 &4379049643382961830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8061156300164212582}
+  m_Layer: 0
+  m_Name: Venodonte_Tail2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8061156300164212582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4379049643382961830}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000058681564, y: -0.0000000014244494, z: -0.024267077, w: 0.99970555}
+  m_LocalPosition: {x: -0.15909614, y: -0.000000038146972, z: 0.00000001740414}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5970185607088102023}
+  m_Father: {fileID: 6712535754725748699}
+  m_LocalEulerAnglesHint: {x: 0.00017818736, y: -0.00039688766, z: -5.980009}
+--- !u!1 &4615249559151609145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6762791929784674134}
+  m_Layer: 0
+  m_Name: Venodonte_Tail8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6762791929784674134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4615249559151609145}
+  serializedVersion: 2
+  m_LocalRotation: {x: 2.9227869e-19, y: 3.8472926e-22, z: 0.0013163087, w: 0.99999917}
+  m_LocalPosition: {x: -0.07739159, y: -0.000000076293944, z: 0.000000008249926}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3304232682643548132}
+  m_Father: {fileID: 3675693225346574625}
+  m_LocalEulerAnglesHint: {x: 0.0060117254, y: -0.00010611776, z: 2.437596}
+--- !u!1 &4797445916957227376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 839566663842518324}
+  m_Layer: 0
+  m_Name: Venodonte_AntennaRight1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &839566663842518324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4797445916957227376}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.9434097, y: -0.24460852, z: -0.21081541, w: -0.07550955}
+  m_LocalPosition: {x: -0.29641697, y: -0.023233188, z: 0.173}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8372924926667640604}
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: -19.616152, y: -146.36073, z: -154.19247}
+--- !u!1 &4873241872781323540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7882493695337540005}
+  m_Layer: 0
+  m_Name: Venodonte_FangLowerLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7882493695337540005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4873241872781323540}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.18604773, y: 0.100313574, z: 0.51661086, w: 0.8297209}
+  m_LocalPosition: {x: -0.0070218635, y: -0.22881265, z: -0.0321994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: 11.834721, y: 21.498896, z: 29.308935}
+--- !u!1 &4874436210190100369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3212205058198710324}
+  m_Layer: 0
+  m_Name: Venodonte_LegFrontRight1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3212205058198710324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4874436210190100369}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.5906847, y: 0.6095928, z: -0.33139843, w: 0.41190207}
+  m_LocalPosition: {x: 0.09020121, y: -0.1667399, z: 0.09799999}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7658189970140670535}
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: 59.79912, y: 172.66339, z: 82.36654}
+--- !u!1 &5207651144005258202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6345903284868300780}
+  - component: {fileID: 283899887115407118}
+  m_Layer: 0
+  m_Name: SkeletonStat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6345903284868300780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207651144005258202}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6961485893847524958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &283899887115407118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207651144005258202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ea78f0293693a449977c070aa3761e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statOverrides:
+  - stat: {fileID: 11400000, guid: 5cf855c74de82684da98bf1f645f2412, type: 2}
+    isUseOverride: 1
+    overrideBaseValue: 5
+  - stat: {fileID: 11400000, guid: 84ac3b7f878c478419ed7205f42c353a, type: 2}
+    isUseOverride: 1
+    overrideBaseValue: 50
+  - stat: {fileID: 11400000, guid: 0bb6349d8fdbe7d4a8185d5b6d18a3b5, type: 2}
+    isUseOverride: 1
+    overrideBaseValue: 5
+  - stat: {fileID: 11400000, guid: ef33bdc0e1f6bf2438a7e89b4be706f2, type: 2}
+    isUseOverride: 1
+    overrideBaseValue: 15
+--- !u!1 &5249307682788711231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8088587919152907419}
+  m_Layer: 0
+  m_Name: Venodonte_LegFrontLeft1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8088587919152907419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5249307682788711231}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.41190204, y: -0.33139843, z: 0.6095928, w: 0.5906847}
+  m_LocalPosition: {x: 0.09020121, y: -0.16673988, z: -0.09777141}
+  m_LocalScale: {x: 1.0000001, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5743080842947777576}
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: 62.522095, y: 13.002173, z: 99.14899}
+--- !u!1 &5422442135015678396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3675693225346574625}
+  m_Layer: 0
+  m_Name: Venodonte_Tail7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3675693225346574625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5422442135015678396}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1.15748425e-17, y: -9.018696e-16, z: -0.02034282, w: 0.99979305}
+  m_LocalPosition: {x: -0.0860852, y: 0.000010147094, z: 0.0000000093300425}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6762791929784674134}
+  m_Father: {fileID: 6986614199197228796}
+  m_LocalEulerAnglesHint: {x: 0.0066552004, y: -0.00035621342, z: -0.44633797}
+--- !u!1 &5571093219419361306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3304232682643548132}
+  - component: {fileID: 456164804382612329}
+  m_Layer: 0
+  m_Name: Venodonte_WeakPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3304232682643548132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571093219419361306}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000011961944, y: -0.0000010668696, z: 0.012699075, w: 0.99991935}
+  m_LocalPosition: {x: -0.11878049, y: 0.01340683, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6762791929784674134}
+  m_LocalEulerAnglesHint: {x: -0.000012153756, y: -0.00012241845, z: 1.4552459}
+--- !u!114 &456164804382612329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571093219419361306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05a69e4620301084b895dbb4e550c084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 3
+  attackPart: {fileID: 3304232682643548132}
+  testDamage: 5
+--- !u!1 &5957468142487391330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5257805203307646250}
+  - component: {fileID: 729871394041959120}
+  - component: {fileID: 458405273548925910}
+  - component: {fileID: 7430641465473269418}
+  m_Layer: 0
+  m_Name: HitFeedback
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5257805203307646250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5957468142487391330}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6961485893847524958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &729871394041959120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5957468142487391330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b0119aec45b4469b212f8ced07844ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitImpactItem: {fileID: 11400000, guid: 4259ee2429eca3e43997e54f48ac02e0, type: 2}
+  playDuration: 0.8
+  actionData: {fileID: 999126363046234532}
+--- !u!114 &458405273548925910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5957468142487391330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2670f84467e1f41498c1b65837feefa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPlayTime: 1.5
+  actionData: {fileID: 999126363046234532}
+  slashEffect: {fileID: 11400000, guid: 53e058a8721d0f04db2ee7488601039a, type: 2}
+--- !u!114 &7430641465473269418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5957468142487391330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f1cd819544d4043ad1de5d1f0b5c34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 3377105452064700711, guid: 6bc540f1b67e45e4a93e4a9adca2930f, type: 3}
+  blinkDuration: 0.2
+  blinkIntensity: 1
+--- !u!1 &6002668461673388956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6854472335101933688}
+  - component: {fileID: 979517342239042688}
+  - component: {fileID: 7175144018491175562}
+  m_Layer: 0
+  m_Name: Texts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6854472335101933688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6002668461673388956}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6961485893847524958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &979517342239042688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6002668461673388956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c6e390e5bd97bf47b43602609cc041a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textComponent: {fileID: 230810443761905831, guid: f4d11710d96a7c5478eef5ea046880f1, type: 3}
+--- !u!136 &7175144018491175562
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6002668461673388956}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.34391987
+  m_Height: 1.3139648
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.43, z: 0}
+--- !u!1 &6316294154066611035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7658189970140670535}
+  m_Layer: 0
+  m_Name: Venodonte_LegFrontRight2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7658189970140670535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6316294154066611035}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000010206114, y: 0.00000000455361, z: 0.40745005, w: 0.9132275}
+  m_LocalPosition: {x: -0.12365509, y: 0.000000038146972, z: 0.000000057220458}
+  m_LocalScale: {x: 0.9999997, y: 0.9999999, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 345121922878304195}
+  m_Father: {fileID: 3212205058198710324}
+  m_LocalEulerAnglesHint: {x: -0.0000024842525, y: 0.0000062028566, z: 48.39122}
+--- !u!1 &6451098685607283095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 106410471281791841}
+  m_Layer: 0
+  m_Name: Venodonte_Tail5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &106410471281791841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6451098685607283095}
+  serializedVersion: 2
+  m_LocalRotation: {x: -1.858457e-16, y: -3.5269173e-15, z: -0.052620523, w: 0.9986146}
+  m_LocalPosition: {x: -0.09786995, y: 0, z: 0.000000011137035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6986614199197228796}
+  m_Father: {fileID: 7438552793725179096}
+  m_LocalEulerAnglesHint: {x: -0.0050340467, y: 0.0014690523, z: -10.5875845}
+--- !u!1 &6703022539334417275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3267506447889771240}
+  - component: {fileID: 1578779296870203266}
+  m_Layer: 0
+  m_Name: Point (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3267506447889771240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6703022539334417275}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.36, y: 2.09, z: -5.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5108405316529007408}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1578779296870203266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6703022539334417275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1dd83f70c749f2938b52455f44dd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6899766701989043726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6897943151409628867}
+  m_Layer: 0
+  m_Name: Venodonte_Cephalothrorax
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6897943151409628867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6899766701989043726}
+  serializedVersion: 2
+  m_LocalRotation: {x: 7.536445e-15, y: 0.7071067, z: -7.5364435e-15, w: 0.7071069}
+  m_LocalPosition: {x: -0, y: -0.023469407, z: 0.37271908}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5320098720900609150}
+  - {fileID: 839566663842518324}
+  - {fileID: 5451626736273919898}
+  - {fileID: 4488927161191353076}
+  - {fileID: 1006447511948675982}
+  - {fileID: 842644265667370045}
+  - {fileID: 7882493695337540005}
+  - {fileID: 5081119302341676769}
+  - {fileID: 2708125682064810080}
+  - {fileID: 2371902523204551258}
+  - {fileID: 8088587919152907419}
+  - {fileID: 3212205058198710324}
+  - {fileID: 703150266604190504}
+  - {fileID: 8040259613022299058}
+  - {fileID: 6712535754725748699}
+  m_Father: {fileID: 2884504315756528193}
+  m_LocalEulerAnglesHint: {x: -0.9189276, y: 88.239456, z: 3.5853128}
+--- !u!1 &7237200643345705520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5081119302341676769}
+  m_Layer: 0
+  m_Name: Venodonte_FangLowerRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5081119302341676769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7237200643345705520}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.82972085, y: 0.51661086, z: 0.100313336, w: 0.18604778}
+  m_LocalPosition: {x: -0.007021875, y: -0.22881266, z: 0.032000005}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: 11.834751, y: 158.5011, z: 147.18869}
+--- !u!1 &7259239652492472504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6961485893847524958}
+  - component: {fileID: 7423645410493993411}
+  - component: {fileID: 3440115657259442953}
+  - component: {fileID: 7986444864791372634}
+  - component: {fileID: 2461687401594399169}
+  - component: {fileID: 8280938101010844512}
+  m_Layer: 0
+  m_Name: Scorpion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6961485893847524958
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259239652492472504}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -39.45, y: 3.09, z: -6.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6616951171222542041}
+  - {fileID: 5249029855013081292}
+  - {fileID: 5108405316529007408}
+  - {fileID: 1832691574790698886}
+  - {fileID: 5257805203307646250}
+  - {fileID: 6345903284868300780}
+  - {fileID: 4437915535062629865}
+  - {fileID: 6854472335101933688}
+  - {fileID: 6403737352211818370}
+  - {fileID: 6906460064735465688}
+  - {fileID: 2417687091226487387}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &7423645410493993411
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259239652492472504}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.35
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!136 &3440115657259442953
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259239652492472504}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &7986444864791372634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259239652492472504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395ee23e904a4022a73053a5217689a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeathEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2910314861909392889}
+        m_TargetAssemblyTypeName: Blade.Entities.EntityAnimator, Assembly-CSharp
+        m_MethodName: SetAnimatorOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2213324929074913221}
+        m_TargetAssemblyTypeName: EnemyCoreSpawn, Assembly-CSharp
+        m_MethodName: SpawnEnemyCore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <PlayerFinder>k__BackingField: {fileID: 11400000, guid: 85816dd192818be4485e3aaa2716d82a, type: 2}
+  detectRange: 80
+  attackRange: 1.4
+  OnKnockBackEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1549668426387098438}
+        m_TargetAssemblyTypeName: Blade.Enemies.NavMovement, Assembly-CSharp
+        m_MethodName: KnockBack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2461687401594399169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259239652492472504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Graph: {fileID: 4094745056924559612, guid: 4a4112d2e097f98499fc7207fce2762f, type: 2}
+  m_BlackboardVariableOverridesList:
+  - rid: 9009887776128630880
+  - rid: 9009887776128631070
+  m_IsInitialised: 0
+  m_IsStarted: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 9009887776128630880
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 7259239652492472504}
+    - rid: 9009887776128631070
+      type: {class: 'BlackboardVariable`1[[Blade.Enemies.WayPoints, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 4346615715289217497
+          m_Value1: 6397325334974685476
+        Name: WayPoints
+        m_Value: {fileID: 7963436760339011810}
+--- !u!114 &8280938101010844512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259239652492472504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a76bd1bbcf04f52bd04a884a1840f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpStat: {fileID: 11400000, guid: 84ac3b7f878c478419ed7205f42c353a, type: 2}
+  maxHealth: 50
+  currentHealth: 50
+--- !u!1 &7405077983871963936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8372924926667640604}
+  m_Layer: 0
+  m_Name: Venodonte_AntennaRight2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8372924926667640604
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7405077983871963936}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0.16368054, w: 0.9865134}
+  m_LocalPosition: {x: -0.11108451, y: 0.0000000047683715, z: -0.000000076293944}
+  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1543782987607491308}
+  m_Father: {fileID: 839566663842518324}
+  m_LocalEulerAnglesHint: {x: -0.60943234, y: 5.798614, z: 20.075186}
+--- !u!1 &7419246945690664695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5970185607088102023}
+  m_Layer: 0
+  m_Name: Venodonte_Tail3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5970185607088102023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7419246945690664695}
+  serializedVersion: 2
+  m_LocalRotation: {x: -4.6362742e-17, y: -1.6568233e-15, z: -0.027971964, w: 0.9996087}
+  m_LocalPosition: {x: -0.108271174, y: -0.0000003814697, z: 0.00000001247753}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7438552793725179096}
+  m_Father: {fileID: 8061156300164212582}
+  m_LocalEulerAnglesHint: {x: -0.011706405, y: 0.00063499797, z: -7.227295}
+--- !u!1 &7462688544377288244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2371902523204551258}
+  m_Layer: 0
+  m_Name: Venodonte_FangUpperRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2371902523204551258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7462688544377288244}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.45588642, y: 0.8613264, z: -0.17144105, w: -0.1445423}
+  m_LocalPosition: {x: -0.13728939, y: -0.2299051, z: 0.044999998}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: 9.412642, y: -155.74219, z: 11.516704}
+--- !u!1 &7563593374961918679
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6748290587570490457}
+  m_Layer: 0
+  m_Name: Venodonte_LegFrontLeft4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6748290587570490457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7563593374961918679}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000068935094, y: 0.00000012555395, z: 0.56895894, w: 0.82236594}
+  m_LocalPosition: {x: -0.3584806, y: -0.000000076293944, z: 0}
+  m_LocalScale: {x: 0.9999998, y: 0.9999999, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7866806886257126199}
+  m_LocalEulerAnglesHint: {x: -0.000070496855, y: -0.000030143776, z: 68.15109}
+--- !u!1 &7571107853018873081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8578175964989893536}
+  m_Layer: 0
+  m_Name: Venodonte_LegRearLeft3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8578175964989893536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7571107853018873081}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000027410303, y: -0.00000007157131, z: -0.73013943, w: 0.68329823}
+  m_LocalPosition: {x: -0.343638, y: 0.000000019073486, z: -0.000000019073486}
+  m_LocalScale: {x: 0.9999998, y: 0.9999998, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8584873566151239017}
+  m_Father: {fileID: 5392317634723352216}
+  m_LocalEulerAnglesHint: {x: -0.000006221328, y: -0.000005721028, z: -92.39887}
+--- !u!1 &7749205834244049265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6986614199197228796}
+  m_Layer: 0
+  m_Name: Venodonte_Tail6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6986614199197228796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749205834244049265}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1.6515349e-15, y: -2.7920808e-15, z: -0.04189613, w: 0.99912196}
+  m_LocalPosition: {x: -0.10180587, y: -0.000000076293944, z: 0.0000000113244365}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3675693225346574625}
+  m_Father: {fileID: 106410471281791841}
+  m_LocalEulerAnglesHint: {x: 0.0007725616, y: 0.0005081487, z: -7.2071095}
+--- !u!1 &7931500872247428990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 842644265667370045}
+  m_Layer: 0
+  m_Name: Venodonte_CheliceraeUpperRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &842644265667370045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931500872247428990}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.6117827, y: 0.7815627, z: -0.12181092, w: -0.0066153985}
+  m_LocalPosition: {x: -0.21029243, y: -0.22118828, z: 0.09799999}
+  m_LocalScale: {x: 0.9999999, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: -4.267569, y: -172.49097, z: 20.850046}
+--- !u!1 &8253188085930546742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7866806886257126199}
+  m_Layer: 0
+  m_Name: Venodonte_LegFrontLeft3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7866806886257126199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8253188085930546742}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000024353524, y: 0.000000042517794, z: 0.7820694, w: 0.6231915}
+  m_LocalPosition: {x: -0.24192084, y: 0.000000019073486, z: -0.000000038146972}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6748290587570490457}
+  m_Father: {fileID: 5743080842947777576}
+  m_LocalEulerAnglesHint: {x: -0.0000017463644, y: 0.000004441762, z: 101.15838}
+--- !u!1 &8260771506632118494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6616951171222542041}
+  - component: {fileID: 7718040967988457411}
+  - component: {fileID: 2910314861909392889}
+  - component: {fileID: 4387579978732749782}
+  m_Layer: 0
+  m_Name: Visual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6616951171222542041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260771506632118494}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2884504315756528193}
+  - {fileID: 4035038349775624709}
+  m_Father: {fileID: 6961485893847524958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &7718040967988457411
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260771506632118494}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 6bc540f1b67e45e4a93e4a9adca2930f, type: 3}
+  m_Controller: {fileID: 9100000, guid: 862b6f36bab92b944ba662db2f9939c7, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2910314861909392889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260771506632118494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85a306bbf8624014a03f4269b5697db1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7718040967988457411}
+--- !u!114 &4387579978732749782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260771506632118494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d14d5932c184a3daff2597d68101238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8405430134164009177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5392317634723352216}
+  m_Layer: 0
+  m_Name: Venodonte_LegRearLeft2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5392317634723352216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8405430134164009177}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000040315555, y: 0.0000000054389235, z: 0.4008082, w: 0.916162}
+  m_LocalPosition: {x: -0.16495013, y: -0.000000038146972, z: 0.000000019073486}
+  m_LocalScale: {x: 1, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8578175964989893536}
+  m_Father: {fileID: 703150266604190504}
+  m_LocalEulerAnglesHint: {x: 0.000004248092, y: -0.0000004206577, z: 47.47495}
+--- !u!1 &8408127352483090339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7438552793725179096}
+  m_Layer: 0
+  m_Name: Venodonte_Tail4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7438552793725179096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8408127352483090339}
+  serializedVersion: 2
+  m_LocalRotation: {x: 9.549125e-16, y: -4.885492e-17, z: -0.05109484, w: 0.9986938}
+  m_LocalPosition: {x: -0.11648002, y: 0.00000019073485, z: 0.000000013401332}
+  m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 106410471281791841}
+  m_Father: {fileID: 5970185607088102023}
+  m_LocalEulerAnglesHint: {x: -0.011450549, y: 0.0016436952, z: -10.694941}
+--- !u!1 &8482501932487678842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5743080842947777576}
+  m_Layer: 0
+  m_Name: Venodonte_LegFrontLeft2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5743080842947777576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8482501932487678842}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.00000003993625, y: -0.00000015351065, z: -0.40744996, w: 0.91322756}
+  m_LocalPosition: {x: -0.12365509, y: 0.000000019073486, z: 0.000000009536743}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7866806886257126199}
+  m_Father: {fileID: 8088587919152907419}
+  m_LocalEulerAnglesHint: {x: -0.00000995828, y: -0.000014513016, z: -48.492676}
+--- !u!1 &8643385678734240893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1006447511948675982}
+  m_Layer: 0
+  m_Name: Venodonte_CheliceraeUpperLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1006447511948675982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8643385678734240893}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0066153393, y: -0.12181106, z: 0.7815627, w: 0.6117828}
+  m_LocalPosition: {x: -0.21029243, y: -0.22118828, z: -0.09826297}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6897943151409628867}
+  m_LocalEulerAnglesHint: {x: 0.7967473, y: -9.431324, z: 154.66345}
+--- !u!1 &8669438222426507312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 99754398245167774}
+  - component: {fileID: 4055117332563073034}
+  m_Layer: 0
+  m_Name: Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &99754398245167774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8669438222426507312}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.47, y: 3.45, z: 7.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5108405316529007408}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4055117332563073034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8669438222426507312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1dd83f70c749f2938b52455f44dd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &9120633606290713728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4035038349775624709}
+  - component: {fileID: 5507977307776022415}
+  m_Layer: 0
+  m_Name: SK_Venodonte
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4035038349775624709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120633606290713728}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.19, y: -3.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6616951171222542041}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &5507977307776022415
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9120633606290713728}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 4fc1653f932e8a04f8b0a6ef7e771969, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 4
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -8438024961191353242, guid: 6bc540f1b67e45e4a93e4a9adca2930f, type: 3}
+  m_Bones:
+  - {fileID: 6897943151409628867}
+  - {fileID: 1006447511948675982}
+  - {fileID: 839566663842518324}
+  - {fileID: 8372924926667640604}
+  - {fileID: 1543782987607491308}
+  - {fileID: 5853828301084411990}
+  - {fileID: 1612161364717527817}
+  - {fileID: 5451626736273919898}
+  - {fileID: 4488927161191353076}
+  - {fileID: 5320098720900609150}
+  - {fileID: 842644265667370045}
+  - {fileID: 7882493695337540005}
+  - {fileID: 5081119302341676769}
+  - {fileID: 2708125682064810080}
+  - {fileID: 2371902523204551258}
+  - {fileID: 8088587919152907419}
+  - {fileID: 5743080842947777576}
+  - {fileID: 7866806886257126199}
+  - {fileID: 6748290587570490457}
+  - {fileID: 3212205058198710324}
+  - {fileID: 5392317634723352216}
+  - {fileID: 8578175964989893536}
+  - {fileID: 345121922878304195}
+  - {fileID: 5847889599100508606}
+  - {fileID: 7658189970140670535}
+  - {fileID: 703150266604190504}
+  - {fileID: 9162779089971566331}
+  - {fileID: 8040259613022299058}
+  - {fileID: 3981397618460755798}
+  - {fileID: 8584873566151239017}
+  - {fileID: 6712535754725748699}
+  - {fileID: 8061156300164212582}
+  - {fileID: 6762791929784674134}
+  - {fileID: 5970185607088102023}
+  - {fileID: 7438552793725179096}
+  - {fileID: 106410471281791841}
+  - {fileID: 3304232682643548132}
+  - {fileID: 6986614199197228796}
+  - {fileID: 3675693225346574625}
+  - {fileID: 3009873378534271529}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 6897943151409628867}
+  m_AABB:
+    m_Center: {x: 0.010617435, y: 0.29818976, z: 0.031524688}
+    m_Extent: {x: 0.6485984, y: 1.1917161, z: 0.7005781}
+  m_DirtyAABB: 0

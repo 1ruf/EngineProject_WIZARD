@@ -4,11 +4,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameStartPortal : MonoBehaviour, IInteractable
+public class SceneChangePortal : MonoBehaviour, IInteractable
 {
     [SerializeField] private EventChannelSO sceneChannel;
+    [SerializeField] private string sceneName = "GameScene";
     public void Interact(Player player)
     {
+        print("상호작용");
         player.CanMove = false;
         player.GetCompo<PlayerCamera>().SceneChange(true);
         StartCoroutine(SceneChange());
@@ -18,7 +20,7 @@ public class GameStartPortal : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(0.3f);
 
         SceneChangeEvent evt = SceneEvent.SceneChangeEvent;
-        evt.SceneName = "GameScene";
+        evt.SceneName = sceneName;
         sceneChannel.InvokeEvent(evt);
     }
 }
