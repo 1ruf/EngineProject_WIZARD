@@ -30,18 +30,18 @@ public class StackList : MonoBehaviour
     }
     private void SetDesc(int index, SkillBuildUI buildUI)
     {
-        switch (index)
+        switch (idx)
         {
             case 0:
-                SkillRangeSO range = skills.GetSkill<SkillRangeSO>(idx);
+                SkillRangeSO range = skills.GetSkill<SkillRangeSO>(index);
                 buildUI.SetInfo(range.name, range.Description);
                 break;
             case 1:
-                SkillAttributeSO attribute = skills.GetSkill<SkillAttributeSO>(idx);
+                SkillAttributeSO attribute = skills.GetSkill<SkillAttributeSO>(index);
                 buildUI.SetInfo(attribute.name, attribute.Description);
                 break;
             case 2:
-                SkillTypeSO type = skills.GetSkill<SkillTypeSO>(idx);
+                SkillTypeSO type = skills.GetSkill<SkillTypeSO>(index);
                 buildUI.SetInfo(type.name, type.Description);
                 break;
         }

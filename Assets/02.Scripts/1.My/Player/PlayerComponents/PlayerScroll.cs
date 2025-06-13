@@ -23,9 +23,6 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
 
     private bool isSkillActivated;
 
-    private bool _isCreating;
-    private bool _skillUsing;
-
     private int _pressKey;
 
     private int _stackCnt;
@@ -72,14 +69,12 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
 
     private void HandleSkillUsed()
     {
-        _skillUsing = false;
         _player.CanMove = true;
     }
 
     private void HandleCreatePressed()
     {
         if (isSkillActivated == true) return;
-        _isCreating = true;
         BuildSkill();
     }
     public void SetSkillActive(bool value)

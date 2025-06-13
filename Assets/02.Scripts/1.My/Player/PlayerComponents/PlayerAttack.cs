@@ -1,11 +1,13 @@
 using Core;
 using Core.Events;
 using Players;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour, IPlayerComponent
 {
-    [SerializeField] private GameObject _targetSkillObj;
+    [SerializeField] private TextMeshProUGUI _distaceTmp;
 
     public bool IsSkillReady { get; private set; }
 
@@ -24,7 +26,6 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     {
         _skillSO = skill;
         IsSkillReady = true;
-        SetAttackPostition();
     }
 
     public void Initialize(Player player)
@@ -52,15 +53,6 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         _input.OnAttackPressed -= HandleAttackPress;
     }
 
-    private void SetTargetSkill(bool value, int radius = 0)
-    {
-        _targetSkillObj.gameObject.SetActive(value);
-        if (!value) return;
-
-        radius *= 2;
-        _targetSkillObj.transform.localScale = new Vector3(radius, radius, 1);
-    }
-
     private void OrbDestroy()
     {
         if (_scroll == null) _scroll = _player.GetCompo<PlayerScroll>();
@@ -73,7 +65,6 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         Vector3 AttackPosition = _input.GetWorldPosition();
 
         OrbDestroy();
-        SetTargetSkill(false);
 
         SpawnSkillEvent evt = SkillEvent.SetSkillEvent;
         Debug.Assert(_skillSO != null, "skill이 없습니다.");
@@ -85,11 +76,6 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
 
         _animTrigger.OnSpellActiveeMotion -= ActiveSkill;
         _isAttacking = false;
-    }
-
-    private bool CheckDistance(Vector3 v1, Vector3 v2)
-    {
-        return Vector3.Distance(v1, v2) < (int)_skillSO.SkillRange.Range;
     }
 
     private void HandleAttackPress()
@@ -110,9 +96,21 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
 
         _player.GetCompo<PlayerAnimation>().SetState(AnimationState.Attack);
     }
-
-    private void SetAttackPostition()
+    private void FixedUpdate()
     {
-        SetTargetSkill(true, (int)_skillSO.SkillRange.Range);
+        SetDistaceUI();
+    }
+    private void SetDistaceUI()
+    {
+        if (IsSkillReady == false)
+        {
+            _distaceTmp.text = string.Empty;
+            return;
+        }
+        Vector3 pos = _input.GetWorldPosition();
+        float dis = Vector3.Distance(_player.transform.position, pos);
+
+        _distaceTmp.color = (float)_skillSO.SkillRange.Range > dis ? Color.green : Color.red;
+        _distaceTmp.text = $"{Vector3.Distance(_player.transform.position, pos):F1}";
     }
 }

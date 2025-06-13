@@ -1,8 +1,8 @@
+using GondrLib.ObjectPool.Editor;
+using GondrLib.ObjectPool.Runtime;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using GondrLib.ObjectPool.Editor;
-using GondrLib.ObjectPool.Runtime;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -36,13 +36,13 @@ public class PoolManagerEditor : EditorWindow
         MonoScript script = MonoScript.FromScriptableObject(this);
         string scriptPath = AssetDatabase.GetAssetPath(script);
         string dataPath = Application.dataPath;
-        _rootFolderPath = Directory.GetParent( Path.GetDirectoryName(scriptPath)).FullName.Replace("\\", "/");
-        
+        _rootFolderPath = Directory.GetParent(Path.GetDirectoryName(scriptPath)).FullName.Replace("\\", "/");
+
         if (_rootFolderPath.StartsWith(dataPath))
         {
             _rootFolderPath = "Assets" + _rootFolderPath.Substring(dataPath.Length);
         }
-        
+
         if (poolManager == null)
         {
             string filePath = $"{_rootFolderPath}/PoolManager.asset";
@@ -56,16 +56,16 @@ public class PoolManagerEditor : EditorWindow
         }
         //visualTreeAsset;
         //itemAsset
-         visualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>($"{_rootFolderPath}/Editor/PoolManagerEditor.uxml");
-         Debug.Assert(visualTreeAsset != null, "Visual tree asset is null");
-         itemAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>($"{_rootFolderPath}/Editor/PoolItemUI.uxml");
-         Debug.Assert(itemAsset != null, "Item asset is null");
+        visualTreeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>($"{_rootFolderPath}/Editor/PoolManagerEditor.uxml");
+        Debug.Assert(visualTreeAsset != null, "Visual tree asset is null");
+        itemAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>($"{_rootFolderPath}/Editor/PoolItemUI.uxml");
+        Debug.Assert(itemAsset != null, "Item asset is null");
     }
 
     public void CreateGUI()
     {
         InitializeRootFolder();
-        
+
         VisualElement root = rootVisualElement;
         visualTreeAsset.CloneTree(root);
 
@@ -83,7 +83,7 @@ public class PoolManagerEditor : EditorWindow
         _itemList = new List<PoolItemUI>();
 
         _inspectorView = root.Q<VisualElement>("InspectorView");
-        
+
         GeneratePoolingItems();
     }
 
@@ -97,13 +97,13 @@ public class PoolManagerEditor : EditorWindow
         {
             Directory.CreateDirectory($"{_rootFolderPath}/Items");
         }
-        
+
         AssetDatabase.CreateAsset(newItemSO, $"{_rootFolderPath}/Items/{itemName}.asset");
-        
+
         poolManager.itemList.Add(newItemSO);
         EditorUtility.SetDirty(poolManager);
         AssetDatabase.SaveAssets();
-        
+
         GeneratePoolingItems();
     }
 
@@ -111,19 +111,19 @@ public class PoolManagerEditor : EditorWindow
     {
         _itemView.Clear();
         _itemList.Clear();
-        _inspectorView.Clear(); 
+        _inspectorView.Clear();
 
         foreach (var item in poolManager.itemList)
         {
             var itemTemplate = itemAsset.Instantiate();
             PoolItemUI itemUI = new PoolItemUI(itemTemplate, item);
-            
+
             _itemView.Add(itemTemplate);
             _itemList.Add(itemUI);
 
             itemUI.Name = item.poolingName;
-            
-            if(_selectedItem != null && _selectedItem.poolItem == item)
+
+            if (_selectedItem != null && _selectedItem.poolItem == item)
             {
                 itemUI.IsActive = true;
                 _selectedItem = itemUI;
@@ -134,7 +134,7 @@ public class PoolManagerEditor : EditorWindow
             itemUI.OnDeleteEvent += HandleDeleteEvent;
         }
     }
-    
+
     private void HandleSelectEvent(PoolItemUI target)
     {
         if (_selectedItem != null)
@@ -162,12 +162,12 @@ public class PoolManagerEditor : EditorWindow
 
     private void HandleDeleteEvent(PoolItemUI target)
     {
-        if (EditorUtility.DisplayDialog("Warning", 
+        if (EditorUtility.DisplayDialog("Warning",
                 "Are you sure to delete this item?", "OK", "Cancel") == false)
         {
             return;
         }
-        
+
         poolManager.itemList.Remove(target.poolItem); //눌린녀석을 리스트에서 제거
         AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(target.poolItem)); //에셋 삭제
         EditorUtility.SetDirty(poolManager);
@@ -177,7 +177,7 @@ public class PoolManagerEditor : EditorWindow
         {
             _selectedItem = null; //선택된녀석이 삭제되면 null로 초기화
         }
-        
+
         GeneratePoolingItems();
     }
 }

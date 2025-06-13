@@ -34,7 +34,14 @@ public class PlayerAnimation : MonoBehaviour, IPlayerComponent
         _animator.SetBool("IDLE", state == AnimationState.Idle);
         _animator.SetBool("WALK", state == AnimationState.Walk);
         _animator.SetBool("RUN", state == AnimationState.Run);
-        _animator.SetBool("ATTACK", state == AnimationState.Attack);
+        if (state == AnimationState.Attack) StartCoroutine(SetAttack());
+        else _animator.SetBool("ATTACK", false);
+    }
+
+    private IEnumerator SetAttack()
+    {
+        yield return new WaitForSeconds(1f);
+        _animator.SetBool("ATTACK", true);
     }
 }
 

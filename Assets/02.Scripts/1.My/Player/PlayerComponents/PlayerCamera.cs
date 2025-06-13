@@ -14,7 +14,6 @@ public class PlayerCamera : MonoBehaviour, IPlayerComponent
     [SerializeField] private EventChannelSO cameraChannel;
 
     [SerializeField] private Transform camTarget;
-    [SerializeField] private float scrollSpeed = 0.1f;
 
     [SerializeField] private float shakeThreshold = 0.01f;
     [SerializeField] private float decreaseSpeed = 1f;
