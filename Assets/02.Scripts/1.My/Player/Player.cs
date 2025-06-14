@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
         InitStat();
         AddComponents();
         InitializeComponents();
+
+        StartCoroutine(MpUpdate());
     }
     //private void Update()
     //{
@@ -47,7 +49,6 @@ public class Player : MonoBehaviour
         Hp = maxHp;
         Mp = maxMp;
     }
-
     public void SetPlayerStat(int hp, int mp)
     {
         if (hp > maxHp)
@@ -112,6 +113,16 @@ public class Player : MonoBehaviour
 
     public IPlayerComponent GetCompo(Type type)
         => Components.GetValueOrDefault(type);
+
+    private IEnumerator MpUpdate()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            SetPlayerStat(Hp, Mp += 3);
+            SetStatUI();
+        }
+    }
 }
 public enum AnimationState
 {

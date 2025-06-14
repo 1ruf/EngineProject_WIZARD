@@ -1,16 +1,26 @@
 using UnityEngine;
 
-public class MouseLook : MonoBehaviour
+public class MenuCameraLook : MonoBehaviour
 {
-    [SerializeField] private float mouseSensitivity = 5f;
-    [SerializeField] private float rotationSmoothTime = 0.1f;
+    [SerializeField] private float mouseSensitivity = 3f;
+    [SerializeField] private float rotationSmoothTime = 0.08f;
 
-    [SerializeField] private float minPitch = -30f;
-    [SerializeField] private float maxPitch = 60f;
+    [SerializeField] private float maxYaw = 30f;
+    [SerializeField] private float maxPitch = 15f; 
 
     private Vector2 currentRotation;
     private Vector2 targetRotation;
     private Vector2 rotationVelocity;
+
+    private Vector2 centerRotation;
+
+    void Start()
+    {
+        Vector3 initialEuler = transform.localEulerAngles;
+        centerRotation = new Vector2(initialEuler.y, initialEuler.x);
+        currentRotation = centerRotation;
+        targetRotation = centerRotation;
+    }
 
     void Update()
     {
@@ -20,7 +30,8 @@ public class MouseLook : MonoBehaviour
         targetRotation.x += mouseX;
         targetRotation.y -= mouseY;
 
-        targetRotation.y = Mathf.Clamp(targetRotation.y, minPitch, maxPitch);
+        targetRotation.x = Mathf.Clamp(targetRotation.x, centerRotation.x - maxYaw, centerRotation.x + maxYaw);
+        targetRotation.y = Mathf.Clamp(targetRotation.y, centerRotation.y - maxPitch, centerRotation.y + maxPitch);
 
         currentRotation = Vector2.SmoothDamp(currentRotation, targetRotation, ref rotationVelocity, rotationSmoothTime);
 

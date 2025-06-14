@@ -38,6 +38,12 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
 
         _input.OnSprintPressed += OnSprint;
     }
+    public void Teleport(Vector3 pos)
+    {
+        charController.enabled = false;
+        _playerTrm.position = pos;
+        charController.enabled = true;
+    }
     private void OnDestroy()
     {
         _input.OnSprintPressed -= OnSprint;

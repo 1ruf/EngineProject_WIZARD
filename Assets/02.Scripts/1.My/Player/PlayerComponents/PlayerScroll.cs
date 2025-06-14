@@ -2,6 +2,7 @@ using Core;
 using Core.Events;
 using Players;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -13,6 +14,7 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
     private Player _player;
     private PlayerInputSO _input;
     private PlayerMovement _movement;
+    private PlayerAnimatorTrigger _trigger;
     private EventChannelSO _uiChannel;
 
     private BuildSkillEvent _buildEvt => SkillEvent.BuildSkillEvent;
@@ -28,6 +30,8 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
     private int _stackCnt;
     private int _skillCnt;
 
+    public bool IsAttackCool;
+
     private void Awake()
     {
         _slowTimeVolume = GetComponentInChildren<Volume>();
@@ -38,8 +42,9 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
         _player = player;
         _input = player.Input;
         _uiChannel = player.UiChannel;
+        _trigger = player.GetCompo<PlayerAnimatorTrigger>();
 
-        _player.GetCompo<PlayerAnimatorTrigger>().OnAnimationEnd += HandleSkillUsed;
+        _trigger.OnAnimationEnd += HandleSkillUsed;
         _input.OnSkillCreatePressed += HandleCreatePressed;
     }
     private void Update()
@@ -70,11 +75,17 @@ public class PlayerScroll : MonoBehaviour, IPlayerComponent
     private void HandleSkillUsed()
     {
         _player.CanMove = true;
+        StartCoroutine(SetCool(false));
     }
-
+    private IEnumerator SetCool(bool value)
+    {
+        yield return new WaitForSeconds(0.75f);
+        IsAttackCool = value;
+    }
     private void HandleCreatePressed()
     {
-        if (isSkillActivated == true) return;
+        if (isSkillActivated == true || IsAttackCool == true) return;
+        IsAttackCool = true;
         BuildSkill();
     }
     public void SetSkillActive(bool value)

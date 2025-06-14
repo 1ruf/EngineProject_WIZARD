@@ -128,33 +128,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Stack1"",
-                    ""type"": ""Button"",
-                    ""id"": ""22ad0513-db11-437b-a81c-ed3ac6fc4d4e"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Stack2"",
-                    ""type"": ""Button"",
-                    ""id"": ""bd26d7d3-dd5f-409f-a220-34cdef2a4d13"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Stack3"",
-                    ""type"": ""Button"",
-                    ""id"": ""e2f22573-c462-4de9-99d2-556cdc8640b1"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Look"",
                     ""type"": ""Button"",
                     ""id"": ""a76cb84f-0de2-4501-9cf4-af9db34e9c61"",
@@ -194,6 +167,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""name"": ""MouceLock"",
                     ""type"": ""Button"",
                     ""id"": ""ce25e544-8a7e-4dac-9e2b-c9eb74c24290"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Teleport"",
+                    ""type"": ""Button"",
+                    ""id"": ""ec0345ab-65e8-4b75-8128-57def7f56cea"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -456,39 +438,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""71d03e3c-f1ca-4129-9bd9-e6e59ff60bb6"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Stack1"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6d188ede-dca9-42b1-aff8-8d83ed62f13e"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Stack2"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""08f2fe92-4e1b-403c-a544-71550ec2538b"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Stack3"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""b1ad2bd5-c46b-4582-8b43-4f9c41dddd3a"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
@@ -539,6 +488,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MouceLock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""952bf5db-db2b-4712-b7ff-247d645c8825"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Teleport"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1130,14 +1090,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_SecretSkill = m_Player.FindAction("SecretSkill", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
-        m_Player_Stack1 = m_Player.FindAction("Stack1", throwIfNotFound: true);
-        m_Player_Stack2 = m_Player.FindAction("Stack2", throwIfNotFound: true);
-        m_Player_Stack3 = m_Player.FindAction("Stack3", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Scroll = m_Player.FindAction("Scroll", throwIfNotFound: true);
         m_Player_Pointer = m_Player.FindAction("Pointer", throwIfNotFound: true);
         m_Player_SkillCreate = m_Player.FindAction("SkillCreate", throwIfNotFound: true);
         m_Player_MouceLock = m_Player.FindAction("MouceLock", throwIfNotFound: true);
+        m_Player_Teleport = m_Player.FindAction("Teleport", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1235,14 +1193,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_SecretSkill;
     private readonly InputAction m_Player_Sprint;
-    private readonly InputAction m_Player_Stack1;
-    private readonly InputAction m_Player_Stack2;
-    private readonly InputAction m_Player_Stack3;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Scroll;
     private readonly InputAction m_Player_Pointer;
     private readonly InputAction m_Player_SkillCreate;
     private readonly InputAction m_Player_MouceLock;
+    private readonly InputAction m_Player_Teleport;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1271,18 +1227,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Stack1".
-        /// </summary>
-        public InputAction @Stack1 => m_Wrapper.m_Player_Stack1;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Stack2".
-        /// </summary>
-        public InputAction @Stack2 => m_Wrapper.m_Player_Stack2;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Stack3".
-        /// </summary>
-        public InputAction @Stack3 => m_Wrapper.m_Player_Stack3;
-        /// <summary>
         /// Provides access to the underlying input action "Player/Look".
         /// </summary>
         public InputAction @Look => m_Wrapper.m_Player_Look;
@@ -1302,6 +1246,10 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/MouceLock".
         /// </summary>
         public InputAction @MouceLock => m_Wrapper.m_Player_MouceLock;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Teleport".
+        /// </summary>
+        public InputAction @Teleport => m_Wrapper.m_Player_Teleport;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1340,15 +1288,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
-            @Stack1.started += instance.OnStack1;
-            @Stack1.performed += instance.OnStack1;
-            @Stack1.canceled += instance.OnStack1;
-            @Stack2.started += instance.OnStack2;
-            @Stack2.performed += instance.OnStack2;
-            @Stack2.canceled += instance.OnStack2;
-            @Stack3.started += instance.OnStack3;
-            @Stack3.performed += instance.OnStack3;
-            @Stack3.canceled += instance.OnStack3;
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
@@ -1364,6 +1303,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @MouceLock.started += instance.OnMouceLock;
             @MouceLock.performed += instance.OnMouceLock;
             @MouceLock.canceled += instance.OnMouceLock;
+            @Teleport.started += instance.OnTeleport;
+            @Teleport.performed += instance.OnTeleport;
+            @Teleport.canceled += instance.OnTeleport;
         }
 
         /// <summary>
@@ -1387,15 +1329,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
-            @Stack1.started -= instance.OnStack1;
-            @Stack1.performed -= instance.OnStack1;
-            @Stack1.canceled -= instance.OnStack1;
-            @Stack2.started -= instance.OnStack2;
-            @Stack2.performed -= instance.OnStack2;
-            @Stack2.canceled -= instance.OnStack2;
-            @Stack3.started -= instance.OnStack3;
-            @Stack3.performed -= instance.OnStack3;
-            @Stack3.canceled -= instance.OnStack3;
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
@@ -1411,6 +1344,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @MouceLock.started -= instance.OnMouceLock;
             @MouceLock.performed -= instance.OnMouceLock;
             @MouceLock.canceled -= instance.OnMouceLock;
+            @Teleport.started -= instance.OnTeleport;
+            @Teleport.performed -= instance.OnTeleport;
+            @Teleport.canceled -= instance.OnTeleport;
         }
 
         /// <summary>
@@ -1740,27 +1676,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSprint(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Stack1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnStack1(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Stack2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnStack2(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Stack3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnStack3(InputAction.CallbackContext context);
-        /// <summary>
         /// Method invoked when associated input action "Look" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
@@ -1795,6 +1710,13 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMouceLock(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Teleport" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnTeleport(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

@@ -1,5 +1,6 @@
 using Core;
 using Core.Events;
+using NUnit.Framework.Constraints;
 using Players;
 using System;
 using System.Collections;
@@ -10,6 +11,8 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
 {
     [SerializeField] private TextMeshProUGUI _distaceTmp;
     [SerializeField] private GameObject goong;
+
+    [SerializeField] private GameObject teleportEffect;
 
     public bool IsSkillReady { get; private set; }
 
@@ -24,15 +27,15 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
 
     private string _SAVED_ROUND_KEY = "SavedRound";
     private int _savedRound;
-    private bool _isAttacking = false;
+    private bool _isAttacking;
     private bool _secretUse;
+    private bool _teleportUse;
 
     public void SkillReady(SkillSO skill)
     {
         _skillSO = skill;
         IsSkillReady = true;
     }
-
     public void Initialize(Player player)
     {
         _player = player;
@@ -53,14 +56,39 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     {
         _input.OnAttackPressed += HandleAttackPress;
         _input.OnFKeyPressed += HandleSecretSkill;
+        _input.OnTeleportPressed += HandleTeleportSkill;
     }
+
     private void RemoveEvents()
     {
         _input.OnAttackPressed -= HandleAttackPress;
         _input.OnFKeyPressed -= HandleSecretSkill;
+        _input.OnTeleportPressed -= HandleTeleportSkill;
     }
 
+    private void HandleTeleportSkill()
+    {
+        if (_teleportUse || _savedRound < 3) return;
+        _teleportUse = true;
+        Vector3 targetpos;
 
+        targetpos = _input.GetWorldPosition();
+        _player.CanMove = false;
+
+        GameObject playerEff = Instantiate(teleportEffect, null);
+        playerEff.transform.position = _player.transform.position;
+
+        GameObject targetEff = Instantiate(teleportEffect, null);
+        targetEff.transform.position = targetpos;
+        StartCoroutine(Teleport(1.5f, targetpos));
+    }
+
+    private IEnumerator Teleport(float time, Vector3 targetPosition)
+    {
+        yield return new WaitForSeconds(time);
+        _player.GetCompo<PlayerMovement>().Teleport(targetPosition + new Vector3(0, 2, 0));
+        _player.CanMove = true;
+    }
     private void HandleSecretSkill()
     {
         print($"비밀 스킬 사용 시도 : 현재조건{_savedRound}/5, 사용여부:{_secretUse}");

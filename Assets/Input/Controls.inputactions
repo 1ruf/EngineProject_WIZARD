@@ -42,33 +42,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Stack1",
-                    "type": "Button",
-                    "id": "22ad0513-db11-437b-a81c-ed3ac6fc4d4e",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Stack2",
-                    "type": "Button",
-                    "id": "bd26d7d3-dd5f-409f-a220-34cdef2a4d13",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Stack3",
-                    "type": "Button",
-                    "id": "e2f22573-c462-4de9-99d2-556cdc8640b1",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Look",
                     "type": "Button",
                     "id": "a76cb84f-0de2-4501-9cf4-af9db34e9c61",
@@ -108,6 +81,15 @@
                     "name": "MouceLock",
                     "type": "Button",
                     "id": "ce25e544-8a7e-4dac-9e2b-c9eb74c24290",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Teleport",
+                    "type": "Button",
+                    "id": "ec0345ab-65e8-4b75-8128-57def7f56cea",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -370,39 +352,6 @@
                 },
                 {
                     "name": "",
-                    "id": "71d03e3c-f1ca-4129-9bd9-e6e59ff60bb6",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Stack1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6d188ede-dca9-42b1-aff8-8d83ed62f13e",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Stack2",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "08f2fe92-4e1b-403c-a544-71550ec2538b",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Stack3",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "b1ad2bd5-c46b-4582-8b43-4f9c41dddd3a",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
@@ -453,6 +402,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "MouceLock",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "952bf5db-db2b-4712-b7ff-247d645c8825",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Teleport",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

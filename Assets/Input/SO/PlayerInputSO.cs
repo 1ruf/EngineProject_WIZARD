@@ -13,12 +13,10 @@ namespace Players
         public event Action OnFKeyPressed;
         public event Action OnSkillCreatePressed;
         public event Action OnPointerLockPressed;
+        public event Action OnTeleportPressed;
 
         public event Action<bool> OnSprintPressed;
         public event Action<bool> OnLookPressed;
-        public event Action<bool> Stack1;
-        public event Action<bool> Stack2;
-        public event Action<bool> Stack3;
 
         public Vector2 MovementKey { get; private set; }
         private Controls _controls;
@@ -88,30 +86,6 @@ namespace Players
                 OnSprintPressed?.Invoke(false);
         }
 
-        public void OnStack1(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-                Stack1?.Invoke(true);
-            else if (context.canceled)
-                Stack1?.Invoke(false);
-        }
-
-        public void OnStack2(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-                Stack2?.Invoke(true);
-            else if (context.canceled)
-                Stack2?.Invoke(false);
-        }
-
-        public void OnStack3(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-                Stack3?.Invoke(true);
-            else if (context.canceled)
-                Stack3?.Invoke(false);
-        }
-
         public void OnLook(InputAction.CallbackContext context)
         {
             if (context.performed)
@@ -137,6 +111,14 @@ namespace Players
             if (context.performed)
             {
                 OnPointerLockPressed?.Invoke();
+            }
+        }
+
+        public void OnTeleport(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                OnTeleportPressed?.Invoke();
             }
         }
     }
