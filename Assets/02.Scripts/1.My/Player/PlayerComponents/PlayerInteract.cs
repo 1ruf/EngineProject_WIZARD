@@ -18,6 +18,7 @@ public class PlayerInteract : MonoBehaviour, IPlayerComponent
             if (hitCollider.TryGetComponent(out IInteractable interactable))
             {
                 interactable.Interact(_player);
+                Destroy(gameObject);
             }
         }
     }

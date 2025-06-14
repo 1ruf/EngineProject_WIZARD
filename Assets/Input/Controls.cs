@@ -110,12 +110,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Interact"",
+                    ""name"": ""SecretSkill"",
                     ""type"": ""Button"",
                     ""id"": ""852140f2-7766-474d-8707-702459ba45f3"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
@@ -185,6 +185,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""name"": ""SkillCreate"",
                     ""type"": ""Button"",
                     ""id"": ""eb885028-1c2c-4408-8d7e-0e1bc5ae4b1a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouceLock"",
+                    ""type"": ""Button"",
+                    ""id"": ""ce25e544-8a7e-4dac-9e2b-c9eb74c24290"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -430,7 +439,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Interact"",
+                    ""action"": ""SecretSkill"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -441,7 +450,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Interact"",
+                    ""action"": ""SecretSkill"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -519,6 +528,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SkillCreate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9bd6989a-6ca9-4a6e-8851-6bc8d20abc37"",
+                    ""path"": ""<Keyboard>/alt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouceLock"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1108,7 +1128,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
-        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_SecretSkill = m_Player.FindAction("SecretSkill", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Stack1 = m_Player.FindAction("Stack1", throwIfNotFound: true);
         m_Player_Stack2 = m_Player.FindAction("Stack2", throwIfNotFound: true);
@@ -1117,6 +1137,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Scroll = m_Player.FindAction("Scroll", throwIfNotFound: true);
         m_Player_Pointer = m_Player.FindAction("Pointer", throwIfNotFound: true);
         m_Player_SkillCreate = m_Player.FindAction("SkillCreate", throwIfNotFound: true);
+        m_Player_MouceLock = m_Player.FindAction("MouceLock", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1212,7 +1233,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Attack;
-    private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_SecretSkill;
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Stack1;
     private readonly InputAction m_Player_Stack2;
@@ -1221,6 +1242,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Scroll;
     private readonly InputAction m_Player_Pointer;
     private readonly InputAction m_Player_SkillCreate;
+    private readonly InputAction m_Player_MouceLock;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1241,9 +1263,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         /// <summary>
-        /// Provides access to the underlying input action "Player/Interact".
+        /// Provides access to the underlying input action "Player/SecretSkill".
         /// </summary>
-        public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @SecretSkill => m_Wrapper.m_Player_SecretSkill;
         /// <summary>
         /// Provides access to the underlying input action "Player/Sprint".
         /// </summary>
@@ -1277,6 +1299,10 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// </summary>
         public InputAction @SkillCreate => m_Wrapper.m_Player_SkillCreate;
         /// <summary>
+        /// Provides access to the underlying input action "Player/MouceLock".
+        /// </summary>
+        public InputAction @MouceLock => m_Wrapper.m_Player_MouceLock;
+        /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -1308,9 +1334,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
-            @Interact.started += instance.OnInteract;
-            @Interact.performed += instance.OnInteract;
-            @Interact.canceled += instance.OnInteract;
+            @SecretSkill.started += instance.OnSecretSkill;
+            @SecretSkill.performed += instance.OnSecretSkill;
+            @SecretSkill.canceled += instance.OnSecretSkill;
             @Sprint.started += instance.OnSprint;
             @Sprint.performed += instance.OnSprint;
             @Sprint.canceled += instance.OnSprint;
@@ -1335,6 +1361,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @SkillCreate.started += instance.OnSkillCreate;
             @SkillCreate.performed += instance.OnSkillCreate;
             @SkillCreate.canceled += instance.OnSkillCreate;
+            @MouceLock.started += instance.OnMouceLock;
+            @MouceLock.performed += instance.OnMouceLock;
+            @MouceLock.canceled += instance.OnMouceLock;
         }
 
         /// <summary>
@@ -1352,9 +1381,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
-            @Interact.started -= instance.OnInteract;
-            @Interact.performed -= instance.OnInteract;
-            @Interact.canceled -= instance.OnInteract;
+            @SecretSkill.started -= instance.OnSecretSkill;
+            @SecretSkill.performed -= instance.OnSecretSkill;
+            @SecretSkill.canceled -= instance.OnSecretSkill;
             @Sprint.started -= instance.OnSprint;
             @Sprint.performed -= instance.OnSprint;
             @Sprint.canceled -= instance.OnSprint;
@@ -1379,6 +1408,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @SkillCreate.started -= instance.OnSkillCreate;
             @SkillCreate.performed -= instance.OnSkillCreate;
             @SkillCreate.canceled -= instance.OnSkillCreate;
+            @MouceLock.started -= instance.OnMouceLock;
+            @MouceLock.performed -= instance.OnMouceLock;
+            @MouceLock.canceled -= instance.OnMouceLock;
         }
 
         /// <summary>
@@ -1694,12 +1726,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnAttack(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "SecretSkill" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnInteract(InputAction.CallbackContext context);
+        void OnSecretSkill(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "Sprint" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
@@ -1756,6 +1788,13 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnSkillCreate(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "MouceLock" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMouceLock(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

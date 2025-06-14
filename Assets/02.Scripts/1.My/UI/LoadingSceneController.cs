@@ -16,14 +16,21 @@ public class LoadingSceneController : MonoBehaviour
     }
 
 
-    private void Start()
+    private void OnEnable()
     {
+        if (string.IsNullOrEmpty(nextSceneName))
+        {
+            Debug.LogError("nextSceneName is null or empty. Did you forget to call LoadScene()?");
+            return;
+        }
+
         StartCoroutine(LoadSceneProcess());
     }
 
+
     private IEnumerator LoadSceneProcess()
     {
-        loadingText.text = $"Loading... {0}%";
+        loadingText.text = $"Loading... {0}:%";
         AsyncOperation operation = SceneManager.LoadSceneAsync(nextSceneName);
         operation.allowSceneActivation = false;
 
@@ -32,9 +39,8 @@ public class LoadingSceneController : MonoBehaviour
         float loadingPercent = 0f;
         while (true)
         {
-            Debug.Log(operation.progress);
             yield return null;
-            loadingText.text = $"Loading... {loadingPercent}%";
+            loadingText.text = $"Loading... {loadingPercent:F0}%";
 
             if (operation.progress < 0.9f)
             {
@@ -43,7 +49,7 @@ public class LoadingSceneController : MonoBehaviour
             else
             {
                 time += Time.unscaledDeltaTime;
-                loadingPercent = 99f;
+                loadingPercent = 98f;
                 if (time >= 1f)
                 {
                     operation.allowSceneActivation = true;

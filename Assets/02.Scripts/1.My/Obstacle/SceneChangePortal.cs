@@ -10,7 +10,7 @@ public class SceneChangePortal : MonoBehaviour, IInteractable
     [SerializeField] private string sceneName = "GameScene";
     public void Interact(Player player)
     {
-        print("상호작용");
+        Destroy(player);
         player.CanMove = false;
         player.GetCompo<PlayerCamera>().SceneChange(true);
         StartCoroutine(SceneChange());

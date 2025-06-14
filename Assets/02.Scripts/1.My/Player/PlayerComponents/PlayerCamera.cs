@@ -22,6 +22,8 @@ public class PlayerCamera : MonoBehaviour, IPlayerComponent
     private PlayerInputSO _input;
     private Transform _plrTrm;
 
+    private bool _isPointerLocked;
+
     private void OnEnable()
     {
         SetPointerLock(true);
@@ -51,7 +53,13 @@ public class PlayerCamera : MonoBehaviour, IPlayerComponent
     private void AddListeners()
     {
         _input.OnLookPressed += HandleLookPressed;
+        _input.OnPointerLockPressed += HandlePointerLock;
         cameraChannel.AddListener<CameraShakeEvent>(HandleCameraShake);
+    }
+
+    private void HandlePointerLock()
+    {
+        SetPointerLock(!_isPointerLocked);
     }
 
     private void RemoveListeners()
@@ -83,6 +91,7 @@ public class PlayerCamera : MonoBehaviour, IPlayerComponent
     }
     private void SetPointerLock(bool value)
     {
+        _isPointerLocked = value;
         Cursor.lockState = value ? CursorLockMode.Locked : CursorLockMode.None;
     }
     public void SceneChange(bool value)

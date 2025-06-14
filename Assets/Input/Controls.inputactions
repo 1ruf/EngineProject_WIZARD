@@ -24,12 +24,12 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Interact",
+                    "name": "SecretSkill",
                     "type": "Button",
                     "id": "852140f2-7766-474d-8707-702459ba45f3",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -99,6 +99,15 @@
                     "name": "SkillCreate",
                     "type": "Button",
                     "id": "eb885028-1c2c-4408-8d7e-0e1bc5ae4b1a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MouceLock",
+                    "type": "Button",
+                    "id": "ce25e544-8a7e-4dac-9e2b-c9eb74c24290",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -344,7 +353,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Interact",
+                    "action": "SecretSkill",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -355,7 +364,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Interact",
+                    "action": "SecretSkill",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -433,6 +442,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "SkillCreate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9bd6989a-6ca9-4a6e-8851-6bc8d20abc37",
+                    "path": "<Keyboard>/alt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouceLock",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

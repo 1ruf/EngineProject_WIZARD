@@ -20,14 +20,6 @@ public class PlayerStat : MonoBehaviour, IPlayerComponent
     {
         impactVolume = GetComponentInChildren<Volume>();
     }
-    private void Update()
-    {
-        if (Keyboard.current.fKey.wasPressedThisFrame)
-        {
-            Damage(15);
-            ManaUse(15);
-        }
-    }
     public void Initialize(Player player)
     {
         cameraChannel = player.CameraChannel;
@@ -37,17 +29,18 @@ public class PlayerStat : MonoBehaviour, IPlayerComponent
         _mp = player.Mp;
 
         StatApply();
+        player.OnPlayerDeath += PlayerDied;
     }
 
     public void Damage(float damage,bool useImpact = true)
     {
-        _hp -= damage;
+        _hp = _player.Hp - damage;
         if(useImpact == true) SetImpact(damage);
         StatApply();
     }
     public void ManaUse(float mana)
     {
-        _mp -= mana;
+        _mp = _player.Mp - mana;
         StatApply();
     }
 
@@ -57,7 +50,7 @@ public class PlayerStat : MonoBehaviour, IPlayerComponent
         evt.Power = dmg/15;
         cameraChannel.InvokeEvent(evt);
 
-        impactVolume.weight = dmg / 30;
+        impactVolume.weight = dmg / 20;
         StartCoroutine(DecreaseImpact());
     }
 
@@ -66,6 +59,10 @@ public class PlayerStat : MonoBehaviour, IPlayerComponent
         _player.SetPlayerStat((int)_hp, (int)_mp);
     }
 
+    private void PlayerDied()
+    {
+        _player.enabled = false;
+    }
     private IEnumerator DecreaseImpact()
     {
         while (true)

@@ -30,10 +30,8 @@ public class SummonSkill : MonoBehaviour
         Collider[] colliders = Physics.OverlapSphere(transform.position, attackRange);
         foreach (Collider collider in colliders)
         {
-            print(collider);
             if (collider.TryGetComponent(out Blade.Combat.IDamageable damageable))
             {
-                print("АјАн:"+damage);
                 damageable.ApplyDamage(new DamageData() { damage = damage},transform.position,Vector3.zero,null,null);
             }
         }

@@ -12,6 +12,7 @@ public class SceneChangeManager : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1f;
         sceneChannel.AddListener<SceneChangeEvent>(OnSceneChange);
         blocker.DOFade(0, 1f).OnComplete(()=>blocker.gameObject.SetActive(false));
     }

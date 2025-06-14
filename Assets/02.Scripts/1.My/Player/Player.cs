@@ -2,16 +2,21 @@ using Core;
 using Core.Events;
 using Players;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private EventChannelSO sceneChannel;
+    [Header("Player Stat")]
     [SerializeField] private int maxHp;
     [SerializeField] private int maxMp;
     [field: SerializeField] public PlayerInputSO Input { get; private set; }
     [field: SerializeField] public Transform OrbHandler { get; private set; }
+    public event Action OnPlayerDeath;
     public int Hp { get; private set; }
     public int Mp { get; private set; }
 
@@ -30,7 +35,7 @@ public class Player : MonoBehaviour
         Components = new Dictionary<Type, IPlayerComponent>();
         InitStat();
         AddComponents();
-        InitializeComponents(); 
+        InitializeComponents();
     }
     //private void Update()
     //{
@@ -45,11 +50,19 @@ public class Player : MonoBehaviour
 
     public void SetPlayerStat(int hp, int mp)
     {
+        if (hp > maxHp)
+        {
+            hp = maxHp;
+        }
+        if (mp > maxMp)
+        {
+            mp = maxMp;
+        }
         this.Hp = hp;
         this.Mp = mp;
-        if (hp > maxHp) this.Hp = maxHp;
-        if(mp > maxMp) this.Mp = maxMp;
+
         SetStatUI();
+        CheckDeath();
     }
 
     private void SetStatUI()
@@ -64,7 +77,25 @@ public class Player : MonoBehaviour
 
         UiChannel.InvokeEvent(evt);
     }
+    private void CheckDeath()
+    {
+        if (Hp <= 0)
+        {
+            CanMove = false;
+            OnPlayerDeath?.Invoke();
+            Time.timeScale = 0.5f;
+            StartCoroutine(SceneChange());
+        }
+    }
+    private IEnumerator SceneChange()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        Time.timeScale = 1f;
 
+        SceneChangeEvent evt = SceneEvent.SceneChangeEvent;
+        evt.SceneName = "LobbyScene";
+        sceneChannel.InvokeEvent(evt);
+    }
     protected virtual void AddComponents()
     {
         GetComponentsInChildren<IPlayerComponent>().ToList()

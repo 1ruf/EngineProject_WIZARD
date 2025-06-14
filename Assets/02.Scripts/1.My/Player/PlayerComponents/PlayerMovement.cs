@@ -56,21 +56,21 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     }
     private void ApplyGravity()
     {
-        if (IsGround && _verticalVelocity < 0.03f)
+        if (IsGround && _verticalVelocity < 1f)
             _verticalVelocity = -0.05f; //»ìÂ¦ ¾Æ·¡·Î ´ç°ÜÁÖ´Â Èû
         else
-            _verticalVelocity += gravity * Time.fixedDeltaTime;
+            _verticalVelocity += gravity * Time.deltaTime;
 
         _moveDir.y = _verticalVelocity;
     }
 
     private void SetRotation()
     {
-        if (_moveDir.magnitude > 0.3f)
+        if (_moveDir.magnitude > 0.4f)
         {
             Vector3 lookDir = new Vector3(_moveDir.x, 0, _moveDir.z);
             Quaternion targetRot = Quaternion.LookRotation(lookDir);
-            _playerTrm.rotation = Quaternion.Slerp(_playerTrm.rotation, targetRot, rotationSpeed * Time.fixedDeltaTime);
+            _playerTrm.rotation = Quaternion.Slerp(_playerTrm.rotation, targetRot, rotationSpeed * Time.deltaTime);
         }
     }
 
@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
 
     private void SetAnimation()
     {
-        if (_moveDir.sqrMagnitude < 0.1f)
+        if (_moveDir.sqrMagnitude < 0.2f)
         {
             plrAnim.SetState(AnimationState.Idle);
         }
@@ -121,6 +121,6 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     }
     private void Move()
     {
-        charController.Move(_moveDir * Time.fixedDeltaTime);
+        charController.Move(_moveDir * Time.deltaTime);
     }
 }

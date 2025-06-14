@@ -10,8 +10,9 @@ namespace Players
         [SerializeField] private LayerMask whatIsGround;
         
         public event Action OnAttackPressed;
-        public event Action OnInteractPressed;
+        public event Action OnFKeyPressed;
         public event Action OnSkillCreatePressed;
+        public event Action OnPointerLockPressed;
 
         public event Action<bool> OnSprintPressed;
         public event Action<bool> OnLookPressed;
@@ -73,10 +74,10 @@ namespace Players
             _screenPosition = context.ReadValue<Vector2>();
         }
 
-        public void OnInteract(InputAction.CallbackContext context)
+        public void OnSecretSkill(InputAction.CallbackContext context)
         {
             if(context.performed)
-                OnInteractPressed?.Invoke();
+                OnFKeyPressed?.Invoke();
         }
 
         public void OnSprint(InputAction.CallbackContext context)
@@ -129,6 +130,14 @@ namespace Players
         {
             if (context.performed)
                 OnSkillCreatePressed?.Invoke();
+        }
+
+        public void OnMouceLock(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                OnPointerLockPressed?.Invoke();
+            }
         }
     }
 }

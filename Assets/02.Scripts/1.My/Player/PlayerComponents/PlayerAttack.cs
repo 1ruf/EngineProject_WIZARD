@@ -1,6 +1,7 @@
 using Core;
 using Core.Events;
 using Players;
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -8,6 +9,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour, IPlayerComponent
 {
     [SerializeField] private TextMeshProUGUI _distaceTmp;
+    [SerializeField] private GameObject goong;
 
     public bool IsSkillReady { get; private set; }
 
@@ -16,11 +18,14 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     private PlayerAnimatorTrigger _animTrigger;
     private PlayerScroll _scroll;
     private PlayerStat _stat;
-
     private SkillSO _skillSO;
     private EventChannelSO _skillChannel;
 
+
+    private string _SAVED_ROUND_KEY = "SavedRound";
+    private int _savedRound;
     private bool _isAttacking = false;
+    private bool _secretUse;
 
     public void SkillReady(SkillSO skill)
     {
@@ -35,6 +40,7 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
         _skillChannel = player.SkillChannel;
         _stat = player.GetCompo<PlayerStat>();
 
+        _savedRound = PlayerPrefs.GetInt(_SAVED_ROUND_KEY, 0);
         AddEvents();
     }
 
@@ -46,11 +52,23 @@ public class PlayerAttack : MonoBehaviour, IPlayerComponent
     private void AddEvents()
     {
         _input.OnAttackPressed += HandleAttackPress;
+        _input.OnFKeyPressed += HandleSecretSkill;
     }
-
     private void RemoveEvents()
     {
         _input.OnAttackPressed -= HandleAttackPress;
+        _input.OnFKeyPressed -= HandleSecretSkill;
+    }
+
+
+    private void HandleSecretSkill()
+    {
+        print($"비밀 스킬 사용 시도 : 현재조건{_savedRound}/5, 사용여부:{_secretUse}");
+        if (_savedRound < 5 || _secretUse == true) return;
+        print("생성");
+        GameObject sSkill = Instantiate(goong, null);
+        sSkill.transform.position = transform.position + new Vector3(0,2,0);
+        _secretUse = true;
     }
 
     private void OrbDestroy()

@@ -1,7 +1,6 @@
 using Blade.Entities;
 using System.Collections;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class DropItem : MonoBehaviour, ICollectable
 {
